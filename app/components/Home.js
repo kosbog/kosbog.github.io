@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Video from './Video';
+
 
 class Home extends Component {
     render() {
         return (
-            <h1>
-                Home component
-            </h1>
+            <div>
+                <Video />
+                <h1>
+                    Hello home component
+                </h1>
+            </div>
         );
     }
 }

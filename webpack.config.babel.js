@@ -39,10 +39,10 @@ const Config = {
                 }
             },
             {
-                test: /\.(mp4|webm)$/,
+                test: /\.(mp4|webm|ogv|ogg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'app/assets/video/[name].[ext]'
+                    name: 'app/assets/videos/[name].[ext]'
                 }
             }
         ]
