@@ -44,6 +44,10 @@ const Config = {
                 options: {
                     name: 'app/assets/videos/[name].[ext]'
                 }
+            },
+            {
+                test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                loader: 'file-loader?name=app/assets/fonts/[name].[ext]'
             }
         ]
     },
