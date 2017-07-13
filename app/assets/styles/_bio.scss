@@ -1,0 +1,47 @@
+.bio {
+    display: flex;
+    flex: row nowrap;
+    &-about {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 35%;
+        padding: 30px;
+        .title {
+            font-size: 40px;
+        }
+        .text {
+            font-size: 18px;
+            font-family: 'open_sansregular';
+            padding: 30px 0;
+        }
+        .icons {
+            width: 100%;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                li {
+                    font-size: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    &-image {
+        width: 30%;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    &-contacts {
+        width: 35%;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}
