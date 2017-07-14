@@ -3,17 +3,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     &:after {
         content: '';
         display: block;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         opacity: 0;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+    &.small {
+        width: 60px;
+        height: 60px;
+        &:after {
+            width: 60px;
+            height: 60px;
+        }
     }
     &:hover {
         &:after {
@@ -36,6 +44,30 @@
         background-image: url('../images/JavaScript.png');
         &:after {
             background-image: url('../images/JavaScript Filled.png');
+        }
+    }
+    &-mail {
+        background-image: url('../images/New Post.png');
+        &:after {
+            background-image: url('../images/New Post Filled.png');
+        }
+    }
+    &-cell {
+        background-image: url('../images/Cell Phone.png');
+        &:after {
+            background-image: url('../images/Cell Phone Filled.png');
+        }
+    }
+    &-location {
+        background-image: url('../images/Marker.png');
+        &:after {
+            background-image: url('../images/Marker Filled.png');
+        }
+    }
+    &-website {
+        background-image: url('../images/Git.png');
+        &:after {
+            background-image: url('../images/Git Filled.png');
         }
     }
 }

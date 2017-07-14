@@ -1,4 +1,7 @@
 .fullname {
     display: flex;
-    flex: row nowrap;
+    flex-flow: column nowrap;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
