@@ -8,59 +8,49 @@ class Experience extends Component {
                     experience
                 </div>
                 <div className="experience-content">
-                    <div className="years">
-                        <p>
-                            2017
-                        </p>
-                        <p>
-                            2016
-                        </p>
-                        <p>
-                            2015
-                        </p>
-                    </div>
-                    <div className="position">
-                        <div>
+                    <div className="place">
+                        <div className="years">
                             <p>
-                                "Company Name"
-                            </p>
-                            <p>
-                                Front-end Developer
-                            </p>
+                                2017
+                        </p>
                         </div>
-                        <div>
+                        <div className="position">
                             <p>
                                 "Company Name"
                             </p>
-                            <p>
+                            <span>
                                 Front-end Developer
-                            </p>
+                            </span>
                         </div>
-                        <div>
+                        <div className="description">
                             <p>
-                                "Company Name"
-                            </p>
-                            <p>
-                                Front-end Developer
-                            </p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Aliquid eligendi veniam, nihil eum sapiente quod, architecto mollitia facere,
+                            minima suscipit quos facilis possimus aliquam incidunt assumenda voluptatibus at eaque? Blanditiis.
+                        </p>
                         </div>
                     </div>
-                    <div className="description">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid eligendi veniam, nihil eum sapiente quod, architecto mollitia facere, 
+                    <div className="place">
+                       <div className="years">
+                            <p>
+                                2017
+                        </p>
+                        </div>
+                        <div className="position">
+                            <p>
+                                "Company Name"
+                            </p>
+                            <span>
+                                Front-end Developer
+                            </span>
+                        </div>
+                        <div className="description">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Aliquid eligendi veniam, nihil eum sapiente quod, architecto mollitia facere,
                             minima suscipit quos facilis possimus aliquam incidunt assumenda voluptatibus at eaque? Blanditiis.
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid eligendi veniam, nihil eum sapiente quod, architecto mollitia facere, 
-                            minima suscipit quos facilis possimus aliquam incidunt assumenda voluptatibus at eaque? Blanditiis.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid eligendi veniam, nihil eum sapiente quod, architecto mollitia facere, 
-                            minima suscipit quos facilis possimus aliquam incidunt assumenda voluptatibus at eaque? Blanditiis.
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

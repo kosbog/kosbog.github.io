@@ -1,8 +1,9 @@
 .experience {
     @include flex(column, nowrap, space-around, center);
     text-align: center;
+    background-color: $default;
     &-title {
-            padding: 30px 0;
+        padding: 30px 0;
         font-size: 36px;
         width: 100%;
         &:before,
@@ -24,15 +25,49 @@
         }
     }
     &-content {
-        @include flex(row, nowrap, space-between, center);
-        .years {
-            width: 20%;
+        @include flex(column, nowrap, space-between, center);
+        .place {
+            @include flex(row, nowrap, space-between, center);
+            width: 100%;
+            padding: 30px 0;
         }
+        .years,
+        .position,
+        .description {
+           height: 100px;
+        }
+        .years,
         .position {
-            width: 30%;
+            width: 25%;
+        }
+        .description,
+        .position {
+            font-size: 20px;
         }
         .description {
             width: 50%;
+            font-size: 18px;
+            font-family: 'open_sansregular';
+            font-weight: bold;
+        }
+        .years {
+            font-size: 30px;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                background-color: $daffodil;
+                width: 50px;
+                height: 100px;
+            }
+        }
+        .position {
+            span {
+                font-size: 16px;
+                font-family: 'open_sansregular';
+                font-weight: bold;
+            }
         }
     }
 }
