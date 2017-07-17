@@ -1,4 +1,38 @@
 .experience {
-    display: flex;
-    flex: row nowrap;
+    @include flex(column, nowrap, space-around, center);
+    text-align: center;
+    &-title {
+            padding: 30px 0;
+        font-size: 36px;
+        width: 100%;
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 8px;
+            background-color: $candy-apple;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        &:before {
+            left: 20%;
+        }
+        &:after {
+            right: 20%;
+        }
+    }
+    &-content {
+        @include flex(row, nowrap, space-between, center);
+        .years {
+            width: 20%;
+        }
+        .position {
+            width: 30%;
+        }
+        .description {
+            width: 50%;
+        }
+    }
 }

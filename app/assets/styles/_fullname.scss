@@ -1,7 +1,19 @@
 .fullname {
+    width: 40%;
+    padding: 20px;
+    background-color: $tangerine;
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 50px;
+    p {
+        font-size: 36px;
+    }
+    span {
+        font-size: 22px;
+        font-family: 'open_sansregular';
+        font-weight: bold;
+    }
 }

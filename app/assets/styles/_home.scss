@@ -1,11 +1,13 @@
 .content {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: $default;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     top: 50px;
+    color: $blueberry;
+    box-shadow: 7px 5px 30px 5px rgba(0,0,0, 0.5);
 }
 
 header {

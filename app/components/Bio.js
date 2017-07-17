@@ -4,12 +4,12 @@ import selfPhoto from '../assets/images/self.jpg';
 const FullName = () => {
     return (
         <div className="fullname">
-            <p>
+            {/*<p>
                 Bogdan Kosytskyy
             </p>
             <span>
                 Front-end Developer
-            </span>
+            </span>*/}
         </div>
     )
 }
@@ -23,12 +23,16 @@ class Bio extends Component {
                         about me
                 </span>
                     <div className="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus illo aperiam,
-                        debitis pariatur neque magnam culpa voluptatibus,
-                        <br />
-                        nemo aliquid deleniti adipisci,
-                        temporibus eum dicta sit odit dolorum consequatur sequi? Veritatis.
-                </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus illo aperiam,
+                            debitis pariatur neque magnam culpa voluptatibus.
+                        </p>
+                        <br/>
+                        <p>
+                            nemo aliquid deleniti adipisci,
+                            temporibus eum dicta sit odit dolorum consequatur sequi? Veritatis.
+                        </p>
+                    </div>
                     <div className="icons">
                         <ul>
                             <li>
