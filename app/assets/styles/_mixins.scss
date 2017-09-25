@@ -5,3 +5,9 @@
     justify-content: $justify;
     align-items: $align;
 }
+
+@mixin after() {
+    content: '';
+    display: block;
+    position: absolute;
+}
