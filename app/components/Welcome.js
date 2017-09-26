@@ -22,7 +22,7 @@ const Logo = () => {
 
 const Nav = () => {
     return (
-        <nav className="nav">
+        <nav className="header__nav">
             <span className="nav__item"><p>Home</p></span>
             <span className="nav__item"><p>About</p></span>
             <span className="nav__item"><p>Portfolio</p></span>

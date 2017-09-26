@@ -14,7 +14,7 @@ const Skills = () => {
                     </p>
                     <div className="skills__percent skills--javascript">
                         <div className="skills__level skills--javascript"></div>
-                        <div className="skills__value">73%</div>
+                        <div className="skills__value"></div>
                     </div>
                 </div>
                 <div className="skills__item">
@@ -25,7 +25,7 @@ const Skills = () => {
                     </p>
                     <div className="skills__percent skills--html">
                         <div className="skills__level skills--html"></div>
-                        <div className="skills__value">91%</div>
+                        <div className="skills__value"></div>
                     </div>
                 </div>
                 <div className="skills__item">
@@ -36,7 +36,7 @@ const Skills = () => {
                     </p>
                     <div className="skills__percent skills--css">
                         <div className="skills__level skills--css"></div>
-                        <div className="skills__value">86%</div>
+                        <div className="skills__value"></div>
                     </div>
                 </div>
             </div>

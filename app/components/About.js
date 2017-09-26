@@ -1,4 +1,5 @@
 import React from 'react';
+import self from '../assets/images/self/self2.jpeg';
 
 const About = () => {
     return (
@@ -15,7 +16,7 @@ const About = () => {
                 </div>
                 <div className="about__description about--self">
                     <div className="about__image">
-                        
+                        <img src={self} alt=""/>
                     </div>
                     <div className="about__bio">
                         <h3>
