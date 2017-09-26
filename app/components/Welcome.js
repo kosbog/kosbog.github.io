@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Greeting = () =>{
-    return(
+const Greeting = () => {
+    return (
         <div className="greeting">
             <h1>BK</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisicing.</p>
-            <button type="button">more</button>    
+            <div className="btn">
+                <button type="button">more</button>
+            </div>
         </div>
     )
 }
@@ -21,11 +23,11 @@ const Logo = () => {
 const Nav = () => {
     return (
         <nav className="nav">
-            <span className="nav__item">Home</span>
-            <span className="nav__item">About</span>
-            <span className="nav__item">Portfolio</span>
-            <span className="nav__item">Experience</span>
-            <span className="nav__item">Contacts</span>
+            <span className="nav__item"><p>Home</p></span>
+            <span className="nav__item"><p>About</p></span>
+            <span className="nav__item"><p>Portfolio</p></span>
+            <span className="nav__item"><p>Experience</p></span>
+            <span className="nav__item"><p>Contacts</p></span>
         </nav>
     )
 }
@@ -33,7 +35,7 @@ const Nav = () => {
 const Welcome = () => {
     return (
         <div className="header">
-            <div className="header__wrapper">
+            <div className="wrapper header__wrapper">
                 <header>
                     <Logo />
                     <Nav />

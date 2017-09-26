@@ -1,0 +1,46 @@
+.skills {
+    background-color: $bg1;
+    color: $main-color;
+    padding-top: 90px;
+    &__container {
+        @include flex(row, nowrap, space-between, center);
+    }
+    &__item {
+        width: calc(100% / 3.25);
+        h4 {
+            font-family: $raleway;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+        }
+        .skills--javascript {
+            color: $orange;
+        }
+        .skills--html {
+            color: $yellow;
+        }
+        .skills--css {
+            color: $sea;
+        }
+    }
+    &__percent {
+        @include flex(row, nowrap, flex-start, center);
+        margin: 20px 0;
+        height: 50px;
+        background-color: rgb(55, 48, 63);
+    }
+    &__level {
+        height: inherit;
+        width: 50%;
+        margin-right: 20px;
+        &.skills--javascript {
+            background-color: $orange;
+        }
+        &.skills--html {
+            background-color: $yellow;
+        }
+        &.skills--css {
+            background-color: $sea;
+        }
+    }
+}

@@ -1,50 +1,106 @@
 .header {
-    width: 100%;
-    height: 100%;
-    background-color: #EAF2FF;
+    width: inherit;
+    height: inherit;
+    background-color: #362e3d;
     &__wrapper {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
+        width: inherit;
+        height: inherit;
     }
     header {
         width: 100%;
         @include flex(row, nowrap, space-around, center);
     }
     .nav {
-      width: 50%;
-      font-family: $raleway;
-      font-weight: bold;
-      font-size: $primary-size;
-      text-transform: uppercase;
-      padding: 20px 0;
+        width: 50%;
+        font-family: $raleway;
+        font-weight: bold;
+        font-size: $primary-size;
+        color: $main-color;
+        text-transform: uppercase;
+        padding: 20px 0;
         @include flex(row, nowrap, flex-end, center);
         &__item {
-          padding: 0 20px;
-          cursor: pointer;
+            display: block;
+            margin: 0 20px;
+            cursor: pointer;
+            p {
+                &:before {
+                    @include after();
+                    opacity: 0;
+                    bottom: -25px;
+                    height: 2px;
+                    width: 100%;
+                    background-color: $green;
+                    transition: .3s;
+                }
+            }
+            &:hover {
+                color: $green;
+                & p:before {
+                    opacity: 1;
+                    transform: translateY(-18px);
+                    transition: .3s;
+                }
+            }
         }
         &__item:last-child {
-          padding-right: 0;
+            padding-right: 0;
         }
     }
     .greeting {
-      @include flex(column, nowrap, flex-start, flex-start);
-      max-width: 400px;
-      width: 100%;
-      h1,
-      button {
-        font-family: $raleway;
-        text-transform: uppercase;
-      }
-      p {
-        padding-bottom: 30px;
-      }
-      button {
-        border: 2px solid #fff;
-        font-size: $primary-size;
-        padding: 10px 50px;
-        font-weight: bold;
-        cursor: pointer;
-      }
+        @include flex(column, nowrap, flex-start, flex-start);
+        position: absolute;
+        bottom: 35%;
+        max-width: 400px;
+        width: 100%;
+        color: $main-color;
+        h1,
+        button {
+            font-family: $raleway;
+            text-transform: uppercase;
+        }
+        h1 {
+            color: $default-color;
+        }
+        p {
+            padding-bottom: 30px;
+        }
+        button {
+            display: block;
+            border: 2px solid $default-color;
+            font-size: $primary-size;
+            padding: 10px 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s ease-out;                                
+            z-index: 1;
+            // &:before {
+            //     @include after();
+            //     z-index: -1;
+            //     opacity: 0;
+            //     bottom: -100%;
+            //     left: 0;
+            //     height: 100%;
+            //     width: 100%;
+            //     background-color: #fff;
+            //     transition: .3s;
+            // }
+        }
+        .btn {
+            display: block;
+            overflow: hidden;
+            &:hover {
+                color: $green;
+                & button {
+                    border-color: $green;
+                    transition: .3s ease-out;                    
+                    // &:before {
+                    //     opacity: 1;
+                    //     transform: translateY(-100%);
+                    //     transition: .3s ease-out;
+                    // }
+                }
+            }
+        }
     }
 }
