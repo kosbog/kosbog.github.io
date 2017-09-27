@@ -16,11 +16,11 @@ const About = () => {
                 </div>
                 <div className="about__description about--self">
                     <div className="about__image">
-                        <img src={self} alt=""/>
+                        <img src='' alt=""/>
                     </div>
                     <div className="about__bio">
                         <h3>
-                            Hello everyone, I'm <span>Bogdan Kositskiy</span>
+                            Hello everyone, I'm <span>bk</span>
                             <br />
                             front-end developer
                         </h3>

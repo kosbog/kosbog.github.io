@@ -1,29 +1,31 @@
 // Helper functions
-// 
 
 // Skills level animation
-export const skillsLevelAnimation = () => {
+export const skillsLevelAnimation = (e) => {
     let parentElement = document.getElementsByClassName('skills')[0],
         skillElement = document.getElementsByClassName('skills__level'),
         valueElement = document.getElementsByClassName('skills__value'),
-        parentElementYOffset = parentElement.offsetTop - 400,
+        parentElementYOffset = parentElement.offsetTop * 0.65,
         windowYOffset = window.scrollY,
-        arr = [72, 86, 81];
+        skillValue = [68, 86, 79];
 
-    if (parentElementYOffset < windowYOffset) {
+    console.log(parentElementYOffset, windowYOffset);
+
+    if (windowYOffset > parentElementYOffset) {
+        var valueIndex = 0, skillIndex = 0;
+
         [...skillElement].forEach(item => {
-            item.style.width = '80%';
+            item.style.width = `${skillValue[skillIndex] - 5}%`;
+            skillIndex += 1;
         });
+
         [...valueElement].forEach(item => {
-            for (var j = 0; j < 80; j++) {
-                (function(j) {
-                    setTimeout(function() {
-                        item.innerHTML = `${j}%`;
-                    }, j * 30);
-                })(j);
-
+            for (let j = 0; j <= skillValue[valueIndex]; j++) {
+                setTimeout(function() {
+                    item.innerHTML = `${j}%`;
+                }, j * 28);
             }
-
+            valueIndex += 1;
         });
     }
 }

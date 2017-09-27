@@ -1,0 +1,81 @@
+.experience {
+    background-color: $bg2;
+    color: $main-color;
+    padding-top: 70px;
+    span {
+        display: block;
+    }
+    &__container {
+        @include flex(row, wrap, space-between, center);
+    }
+    &__item {
+        @include flex(row, wrap, space-between, center);
+        width: calc(100% / 2.05);
+        padding: 50px 0 0;
+    }
+    &__position {
+        @include flex(row, nowrap, flex-start, center);
+        width: 60%;
+        &:before {
+            @include after();
+            position: relative;
+            left: 0;
+            margin-right: 40px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &__company {
+        @include flex(column, nowrap, space-between, flex-start);
+        width: 40%;
+    }
+    .position {
+        &__item {
+            @include flex(column, nowrap, space-between, flex-start);
+            font-weight: bold;
+            font-size: $default-size;
+            text-transform: uppercase;
+        }
+        &--name {
+            font-family: "Raleway", sans-serif;
+        }
+        &--time {
+            font-size: $primary-size;
+        }
+    }
+    .company {
+        &__item {
+            font-size: 16px;
+        }
+        &--name {
+            font-weight: bold;
+            color: $default-color;
+            text-transform: uppercase;
+        }
+    }
+    .responsibility__list {
+        padding-top: 30px;
+        margin-left: 20px;
+        list-style-type: square;
+    }
+    &__full {
+        width: 100%;
+        margin-top: 15px;
+        height: 20px;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        &:before {
+            @include after();
+            left: 50%;
+            top: -10px;
+            transform: translateX(-50%) rotate(135deg);
+            width: 20px;
+            height: 20px;
+            background-color: $bg2;
+            border-top: 2px solid $green;
+            border-right: 2px solid $green;
+            cursor: pointer;
+        }
+    }
+}
