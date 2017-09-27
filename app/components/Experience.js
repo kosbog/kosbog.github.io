@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { fullExperience } from '../utils/utils';
 
-const ExperienceItem = ({ company, time, position, responsibility, color }) => {
+const ExperienceItem = ({ index, company, time, position, responsibility, color }) => {
     return (
         <div className="experience__item">
             <div className={`experience__position item--list ${color}-bg-pseudo`}>
@@ -30,9 +31,9 @@ const ExperienceItem = ({ company, time, position, responsibility, color }) => {
                     })}
                 </ul>
             </div>
-            <div className={`experience__full ${color}-bd`}>
-
-            </div>
+            <div 
+            className={`experience__full ${color}-bd`}
+            onClick={() => fullExperience(index)} ></div>
         </div>
     )
 }
@@ -63,6 +64,7 @@ const Experience = () => {
             "responsibility": [
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
             ],
             "color": "orange"
@@ -91,6 +93,7 @@ const Experience = () => {
                         return (
                             <ExperienceItem
                                 key={index}
+                                index={index}
                                 company={item.company}
                                 time={item.time}
                                 position={item.position}

@@ -6,7 +6,8 @@
         display: block;
     }
     &__container {
-        @include flex(row, wrap, space-between, center);
+        @include flex(row, wrap, space-between, flex-start);
+        padding-bottom: 90px;
     }
     &__item {
         @include flex(row, wrap, space-between, center);
@@ -53,6 +54,11 @@
             text-transform: uppercase;
         }
     }
+    &__responsibility {
+      height: 0;
+      overflow-y: hidden;
+      transition: height .3s;
+    }
     .responsibility__list {
         padding-top: 30px;
         margin-left: 20px;
@@ -65,6 +71,7 @@
         border-bottom: none;
         border-left: none;
         border-right: none;
+        cursor: pointer;        
         &:before {
             @include after();
             left: 50%;
@@ -73,9 +80,18 @@
             width: 20px;
             height: 20px;
             background-color: $bg2;
+        }
+        &.sea-bd:before {
+            border-top: 2px solid $sea;
+            border-right: 2px solid $sea;
+        }
+        &.green-bd:before {
             border-top: 2px solid $green;
             border-right: 2px solid $green;
-            cursor: pointer;
+        }
+        &.orange-bd:before {
+            border-top: 2px solid $orange;
+            border-right: 2px solid $orange;
         }
     }
 }

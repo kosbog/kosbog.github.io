@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {skillsLevelAnimation} from '../utils/utils';
+import { skillsLevelAnimation } from '../utils/utils';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
+import Portfolio from './Portfolio';
 
 class Home extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Home extends Component {
     componentDidMount() {
         document.addEventListener('scroll', skillsLevelAnimation);
     }
-    
+
     render() {
         return (
             <div className="container">
@@ -23,6 +24,7 @@ class Home extends Component {
                 <About />
                 <Skills />
                 <Experience />
+                <Portfolio />
             </div>
         );
     }

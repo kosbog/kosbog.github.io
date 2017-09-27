@@ -29,3 +29,10 @@ export const skillsLevelAnimation = (e) => {
         });
     }
 }
+
+// Show full experience information
+export const fullExperience = (index) => {
+    let activeElement = document.getElementsByClassName('experience__responsibility')[index];
+
+    activeElement.style.height = '100%';
+}
