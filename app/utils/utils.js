@@ -1,15 +1,13 @@
 // Helper functions
 
 // Skills level animation
-export const skillsLevelAnimation = (e) => {
+export function skillsLevelAnimation(e) {
     let parentElement = document.getElementsByClassName('skills')[0],
         skillElement = document.getElementsByClassName('skills__level'),
         valueElement = document.getElementsByClassName('skills__value'),
-        parentElementYOffset = parentElement.offsetTop * 0.65,
+        parentElementYOffset = parentElement.getBoundingClientRect().top,
         windowYOffset = window.scrollY,
         skillValue = [68, 86, 79];
-
-    console.log(parentElementYOffset, windowYOffset);
 
     if (windowYOffset > parentElementYOffset) {
         var valueIndex = 0, skillIndex = 0;
@@ -27,6 +25,7 @@ export const skillsLevelAnimation = (e) => {
             }
             valueIndex += 1;
         });
+        document.removeEventListener('scroll',  skillsLevelAnimation);
     }
 }
 

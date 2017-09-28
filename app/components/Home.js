@@ -15,6 +15,7 @@ class Home extends Component {
 
     componentDidMount() {
         document.addEventListener('scroll', skillsLevelAnimation);
+        document.removeEventListener('scroll', skillsLevelAnimation, true);
     }
 
     render() {

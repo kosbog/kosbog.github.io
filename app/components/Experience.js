@@ -4,7 +4,7 @@ import { fullExperience } from '../utils/utils';
 const ExperienceItem = ({ index, company, time, position, responsibility, color }) => {
     return (
         <div className="experience__item">
-            <div className={`experience__position item--list ${color}-bg-pseudo`}>
+            <div className={`experience__position ${color}-bg-pseudo`}>
                 <div className={`position__wrapper ${color}-color`}>
                     <span className="position__item position--name">
                         {position}
@@ -14,7 +14,7 @@ const ExperienceItem = ({ index, company, time, position, responsibility, color 
                     </span>
                 </div>
             </div>
-            <div className="experience__company item--list">
+            <div className="experience__company">
                 <span className="company__item company--name">
                     {company.name}
                 </span>

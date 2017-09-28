@@ -44,12 +44,20 @@ body {
     }
 }
 
+.ml-90 {
+    margin-left: 90px;
+}
+
 .green {
     &-color {
         color: $green;
     }
     &-bg {
         background-color: $green;
+    }
+    &-bg-opacity {
+        background-color: $green;
+        background-color: rgba($green, .7);
     }
     &-bg-pseudo:before {
         background-color: $green;
@@ -66,6 +74,10 @@ body {
     &-bg {
         background-color: $pink;
     }
+    &-bg-opacity {
+        background-color: $pink;
+        background-color: rgba($pink, .7);
+    }
     &-bg-pseudo:before {
         background-color: $pink;
     }
@@ -80,6 +92,10 @@ body {
     }
     &-bg {
         background-color: $sea;
+    }
+    &-bg-opacity {
+        background-color: $sea;
+        background-color: rgba($sea, .7);
     }
     &-bg-pseudo:before {
         background-color: $sea;
@@ -96,6 +112,10 @@ body {
     &-bg {
         background-color: $yellow;
     }
+    &-bg-opacity {
+        background-color: $yellow;
+        background-color: rgba($yellow, .7);
+    }
     &-bg-pseudo:before {
         background-color: $yellow;
     }
@@ -110,6 +130,10 @@ body {
     }
     &-bg {
         background-color: $orange;
+    }
+    &-bg-opacity {
+        background-color: $orange;
+        background-color: rgba($orange, .7);
     }
     &-bg-pseudo:before {
         background-color: $orange;
