@@ -18,7 +18,7 @@
           height: 100%;
           top: 0;
           color: #000;
-          // opacity: 0;
+          opacity: 0;
           transition: opacity .2s;
         }
         &--name,
@@ -28,9 +28,10 @@
         }
         &--name {
           text-transform: uppercase;
+          font-size: 18px;
         }
         &--descriprion {
-
+          padding: 3px 0 20px;
         }
         &--list {
           
@@ -42,13 +43,18 @@
       ul {
         li {
           display: inline-block;
-          margin: 0 2px;
+          margin: 0 6px;
           &:after {
             position: absolute;
             display: block;
-            content: '/';
+            content: '|';
             top: 0;
-            left: calc(100% + 2px);
+            left: calc(100% + 3px);
+          }
+          &:last-child {
+            &:after {
+              content: '';
+            }
           }
         }
       }

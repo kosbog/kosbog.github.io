@@ -3,7 +3,7 @@ import React from 'react';
 const Greeting = () => {
     return (
         <div className="greeting">
-            <h1>BK</h1>
+            <h1>Bogdan Kosytskyy</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisicing.</p>
             <div className="btn">
                 <button type="button">more</button>

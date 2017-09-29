@@ -26,7 +26,9 @@ const ExperienceItem = ({ index, company, time, position, responsibility, color 
                 <ul className="responsibility__list">
                     {responsibility.map((item, index) => {
                         return (
-                            <li className="" key={index}>{item}</li>
+                            <li
+                            className={`${color}-bg-pseudo`}
+                            key={index}>{item}</li>
                         )
                     })}
                 </ul>

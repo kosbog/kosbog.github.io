@@ -55,14 +55,21 @@
         }
     }
     &__responsibility {
-      height: 0;
-      overflow-y: hidden;
-      transition: height .3s;
+        height: 0;
+        overflow-y: hidden;
     }
     .responsibility__list {
         padding-top: 30px;
-        margin-left: 20px;
-        list-style-type: square;
+        margin-left: 80px;
+        li {
+            &:before {
+                @include after();
+                top: 10px;
+                left: -15px;
+                width: 5px;
+                height: 5px;
+            }
+        }
     }
     &__full {
         width: 100%;
@@ -71,7 +78,7 @@
         border-bottom: none;
         border-left: none;
         border-right: none;
-        cursor: pointer;        
+        cursor: pointer;
         &:before {
             @include after();
             left: 50%;

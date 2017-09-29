@@ -20,7 +20,7 @@ const About = () => {
                     </div>
                     <div className="about__bio">
                         <h3>
-                            Hello everyone, I'm <span>bk</span>
+                            Hello everyone, I'm <span>Bogdan Kosytskyy</span>
                             <br />
                             front-end developer
                         </h3>

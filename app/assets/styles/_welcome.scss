@@ -1,10 +1,19 @@
 .header {
     width: inherit;
-    height: inherit;
-    background-color: #362e3d;
+    height: inherit; 
+    background-image: url('../images/bg/bg1.jpg');
+    background-size: 100%;
+    &:after {
+        @include after();
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+}
     &__wrapper {
         width: inherit;
         height: inherit;
+        z-index: 1;
     }
     header {
         width: 100%;
@@ -76,17 +85,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: .3s ease-out;
-            z-index: 1; // &:before {
-            //     @include after();
-            //     z-index: -1;
-            //     opacity: 0;
-            //     bottom: -100%;
-            //     left: 0;
-            //     height: 100%;
-            //     width: 100%;
-            //     background-color: #fff;
-            //     transition: .3s;
-            // }
+            z-index: 1;
         }
         .btn {
             display: block;
@@ -95,11 +94,7 @@
                 color: $green;
                 & button {
                     border-color: $green;
-                    transition: .3s ease-out; // &:before {
-                    //     opacity: 1;
-                    //     transform: translateY(-100%);
-                    //     transition: .3s ease-out;
-                    // }
+                    transition: .3s ease-out;
                 }
             }
         }
