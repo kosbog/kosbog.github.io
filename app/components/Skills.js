@@ -42,7 +42,6 @@ const Skills = () => {
                 <div className="skills__container">
                     {
                         skills.map((item, index)=>{
-                            console.log(item);
                             return (
                                 <SkillItem
                                 key={index}

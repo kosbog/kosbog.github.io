@@ -7,13 +7,13 @@ export function skillsLevelAnimation(e) {
         valueElement = document.getElementsByClassName('skills__value'),
         parentElementYOffset = parentElement.getBoundingClientRect().top,
         windowYOffset = window.scrollY,
-        skillValue = [68, 86, 79];
+        skillValue = [71, 90, 83];
 
     if (windowYOffset > parentElementYOffset) {
         var valueIndex = 0, skillIndex = 0;
 
         [...skillElement].forEach(item => {
-            item.style.width = `${skillValue[skillIndex] - 5}%`;
+            item.style.width = `${skillValue[skillIndex] - 7}%`;
             skillIndex += 1;
         });
 
@@ -21,11 +21,11 @@ export function skillsLevelAnimation(e) {
             for (let j = 0; j <= skillValue[valueIndex]; j++) {
                 setTimeout(function() {
                     item.innerHTML = `${j}%`;
-                }, j * 28);
+                }, j * 31);
             }
             valueIndex += 1;
         });
-        document.removeEventListener('scroll',  skillsLevelAnimation);
+        document.removeEventListener('scroll', skillsLevelAnimation);
     }
 }
 

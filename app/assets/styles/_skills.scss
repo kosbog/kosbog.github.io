@@ -1,7 +1,7 @@
 .skills {
     background-color: $bg1;
     color: $main-color;
-    padding: 130px 0 90px;
+    padding: 90px 0;
     &__container {
         @include flex(row, nowrap, space-between, center);
     }

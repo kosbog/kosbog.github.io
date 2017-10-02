@@ -13,18 +13,17 @@ const PortfolioItem = ({ name, descriprion, technologies, image, color }) => {
           <ul>
             {technologies.map((item, index) => {
               return (
-                <li>{item}</li>
+                <li key={index}>{item}</li>
               )
             })}
           </ul>
         </div>
       </div>
-      <div className="portfolio__full"></div>
     </div>
   )
 }
 
-const Portfolio = () => {
+const Portfolio = ({ portfolioFull, showMorePortfolio}) => {
   const portfolio = [
     {
       "name": "Fairy Cake Corp",
@@ -86,6 +85,7 @@ const Portfolio = () => {
         </div>
         <div className="portfolio__container">
           {portfolio.map((item, index) => {
+            if (index < portfolioFull){
             return (
               <PortfolioItem
                 key={index}
@@ -94,8 +94,11 @@ const Portfolio = () => {
                 technologies={item.technologies}
                 image={item.image}
                 color={item.color} />
-            )
+            )}
           })}
+        </div>
+        <div className="btn portfolio__btn" onClick={showMorePortfolio}>
+          <button type="button">more</button>
         </div>
       </div>
     </div>
