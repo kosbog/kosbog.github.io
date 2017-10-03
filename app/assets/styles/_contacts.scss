@@ -10,22 +10,29 @@
         @include flex(row, nowrap, space-between, center);
         width: 100%;
     }
-    &__item {
-        border: 2px solid $default-color;
-    }
     .type {
         &__item {
             width: calc(100% / 3.2);
-            padding: 50px 0;
             transition: border .3s;
             cursor: pointer;
-            &:hover {
+            &:hover label {
+                border: 2px solid $main-color;
+                transition: border .2s;
+            }
+            input[type=radio]{
+                display: none;
+            }
+            input[type=radio]:checked+label {
                 border: 2px solid $green;
-                transition: border .3s;
+            }
+            input[type=radio]:checked+ label .type__icon {
+                display: none;
             }
         }
         &__label {
-            padding: 50px 0;
+            @include flex(column, nowrap, center, center);
+            border: 2px solid rgba($green, .1);
+            padding: 40px 0;
             width: 100%;
         }
         &__wrapper {
@@ -38,10 +45,34 @@
             font-family: "Raleway", sans-serif;
             padding-bottom: 5px;
         }
-        &__input {
-            &:checked + .type__item {
-                border: 2px solid $green;
+        &__icon {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background-color: $bg5;
+            cursor: pointer;
+            &:hover {
+               opacity: 0;
+            }
+            span {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 44px;
+                max-height: 44px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
         }
     }
+    &__info {
+        width: 100%;
+        padding: 70px 0;
+        font-family: inherit;
+    }
+    @import 'contacts.form';
+    @import 'contacts.phone';
 }

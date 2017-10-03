@@ -1,0 +1,21 @@
+.contacts {
+  &__phone {
+    @include flex(column, nowrap, space-around, center);
+    span {
+      display: block;
+    }
+    .phone {
+      &__requisites {
+        @include flex(row, nowrap, flex-start, center);
+        width: calc(100% / 3.2);
+        padding: 16px;
+        border: 2px solid rgba($green, .1);
+      }
+      &__image {
+        width: 44px;
+        height: 44px;
+        margin-right: 30px;
+      }
+    }
+  }
+}

@@ -1,26 +1,81 @@
 import React from 'react';
 
-const ContactsTypeItem = ({ type, value, url, checkContact, isCheckedContact }) => {
+const ContactLocation = ({ }) => {
     return (
-        <div className="contacts__item type__item ">
-                <label htmlFor={type} className="type__label">
-                    <span className="type__name">{type}</span>
-                    <span className="type__value">{value}</span>
-                    <input
-                        className="type__input"
-                        id={type}
-                        type="radio"
-                        name={type}
-                        value={type}
-                        checked={isCheckedContact === type}
-                        onChange={checkContact}
-                    />
-                </label>
+        <div className="contacts__location">
+            loca
         </div>
     )
 }
 
-const Contacts = ({ checkContact, isCheckedContact }) => {
+const ContactPhone = ({ }) => {
+    return (
+        <div className="contacts__phone">
+            <div className="phone__requisites">
+                <span className="phone__image icon icon-telegram"></span>
+                <span className="phone__number">+380-(63)-644-54-55</span>
+            </div>
+            <div className="phone__requisites">
+                <span className="phone__image icon icon-skype"></span>
+                <span className="phone__number">badykos</span>
+            </div>
+            <div className="phone__requisites">
+                <span className="phone__image icon icon-viber"></span>
+                <span className="phone__number">+380-(63)-644-54-55</span>
+            </div>
+        </div>
+    )
+}
+
+const ContactForm = ({ }) => {
+    return (
+        <form
+            className="contacts__form">
+            <div className="form__requisites">
+                <input
+                    placeholder="NAME"
+                    id="name-requisites"
+                    type="text" />
+                <input
+                    placeholder="E-MAIL"
+                    id="email-requisites"
+                    type="text" />
+            </div>
+            <div className="form__textarea">
+                <textarea name="" id="text-requisites" placeholder="MESSAGE"></textarea>
+            </div>
+            <div className="form__button">
+                <button type="submit">send</button>
+            </div>
+        </form>
+    )
+}
+
+const ContactsTypeItem = ({ type, value, url, checkContact, currentContact }) => {
+    return (
+        <div className="contacts__item type__item ">
+            <input
+                className="type__input"
+                id={type}
+                type="radio"
+                name={type}
+                value={type}
+                checked={currentContact === type}
+                onChange={checkContact} />
+            <label
+                htmlFor={type}
+                className="type__label">
+                <span className="type__name">{type}</span>
+                <span className="type__value">{value}</span>
+                <div className="type__icon">
+                    <span className={`icon icon-${type}`}></span>
+                </div>
+            </label>
+        </div>
+    )
+}
+
+const Contacts = ({ checkContact, currentContact }) => {
     const contacts = [
         {
             "primary": true,
@@ -31,7 +86,7 @@ const Contacts = ({ checkContact, isCheckedContact }) => {
         {
             "primary": true,
             "type": "phone",
-            "value": "+380(63)-644-54-55",
+            "value": "+380-(63)-644-54-55",
             "url": null
         },
         {
@@ -58,7 +113,29 @@ const Contacts = ({ checkContact, isCheckedContact }) => {
     ],
         primaryContacts = contacts.filter(item => {
             return item.primary === true;
-        });
+        }),
+        email = "e-mail",
+        phone = "phone",
+        location = "location";
+
+    let toRender = null;
+    switch (currentContact) {
+        case email:
+            toRender = <ContactForm />;
+            break;
+
+        case phone:
+            toRender = <ContactPhone />;
+            break;
+
+        case location:
+            toRender = <ContactLocation />;
+            break;
+
+        default:
+            toRender = <ContactForm />;
+            break;
+    }
 
     return (
         <div className="contacts">
@@ -82,11 +159,13 @@ const Contacts = ({ checkContact, isCheckedContact }) => {
                                     value={item.value}
                                     url={item.url}
                                     checkContact={checkContact}
-                                    isCheckedContact={isCheckedContact} />
+                                    currentContact={currentContact} />
                             )
                         })}
                     </div>
-                    <div className="contacts__info"></div>
+                    <div className="contacts__info">
+                        {toRender}
+                    </div>
                 </div>
             </div>
         </div>

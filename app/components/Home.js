@@ -13,7 +13,7 @@ class Home extends Component {
         super(props);
         this.state = {
             portfolioFull: 3,
-            isCheckedContact: "e-mail"
+            currentContact: "e-mail"
         };
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
@@ -31,7 +31,7 @@ class Home extends Component {
 
     checkContact(e) {
         this.setState({
-            isCheckedContact: e.target.value
+            currentContact: e.target.value
         });
     }
 
@@ -48,7 +48,7 @@ class Home extends Component {
                 <Education />
                 <Contacts
                     checkContact={this.checkContact}
-                    isCheckedContact={this.state.isCheckedContact} />
+                    currentContact={this.state.currentContact} />
             </div>
         );
     }
