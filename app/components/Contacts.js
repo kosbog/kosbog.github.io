@@ -90,22 +90,25 @@ const Contacts = ({ checkContact, currentContact }) => {
             "url": null
         },
         {
+            "primary": false,
             "type": "skype",
             "value": "badykos",
             "url": null
         },
         {
+            "primary": false,
             "type": "linkedin",
             "value": "Bogdan Kosytskyy",
             "url": "https://www.linkedin.com/in/bogdan-kosytskyy/"
         },
         {
+            "primary": false,
             "type": "github",
             "value": "kosbog",
             "url": "https://github.com/kosbog"
         },
         {
-            "primary": true,
+            "primary": false,
             "type": "location",
             "value": "Ukraine, Kiev",
             "url": null

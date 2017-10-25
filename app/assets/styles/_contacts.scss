@@ -12,7 +12,7 @@
     }
     .type {
         &__item {
-            width: calc(100% / 3.2);
+            width: calc(100% / 2.05);
             transition: border .3s;
             cursor: pointer;
             &:hover label {

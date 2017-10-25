@@ -1,4 +1,5 @@
 import React from 'react';
+import photo from '../assets/images/self/self.png';
 
 const Greeting = () => {
     return (
@@ -16,6 +17,14 @@ const Logo = () => {
     return (
         <div className="header__logo">
 
+        </div>
+    )
+}
+
+const Photo = () => {
+    return (
+        <div className="photo">
+            <img src={photo} alt=""/>
         </div>
     )
 }
@@ -41,6 +50,7 @@ const Welcome = () => {
                     <Nav />
                 </header>
                 <Greeting />
+                <Photo />
             </div>
         </div>
     )
