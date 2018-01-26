@@ -4,7 +4,7 @@ import photo from '../assets/images/self/self.png';
 const Greeting = () => {
     return (
         <div className="greeting">
-            <h1>Bogdan Kosytskyy</h1>
+            <h1>Bogdan Kosytskyi</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisicing.</p>
             <div className="btn">
                 <button type="button">more</button>

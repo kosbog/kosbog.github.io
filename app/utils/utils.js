@@ -7,7 +7,7 @@ export function skillsLevelAnimation(e) {
         valueElement = document.getElementsByClassName('skills__value'),
         parentElementYOffset = parentElement.getBoundingClientRect().top,
         windowYOffset = window.scrollY,
-        skillValue = [71, 90, 83];
+        skillValue = [71, 91, 87];
 
     if (windowYOffset > parentElementYOffset) {
         var valueIndex = 0, skillIndex = 0;
@@ -21,7 +21,7 @@ export function skillsLevelAnimation(e) {
             for (let j = 0; j <= skillValue[valueIndex]; j++) {
                 setTimeout(function() {
                     item.innerHTML = `${j}%`;
-                }, j * 31);
+                }, j * 33);
             }
             valueIndex += 1;
         });

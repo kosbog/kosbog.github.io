@@ -1,14 +1,12 @@
 import React from 'react';
-import {skillsLevelAnimation} from '../utils/utils';
+import { skillsLevelAnimation } from '../utils/utils';
 
-const SkillItem = ({name, value, color}) => {
+const SkillItem = ({ item }) => {
+    const { name, value, color, description } = item;
     return (
         <div className="skills__item">
             <h4 className={`${color}-color`}>{name}</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Labore nostrum cum minima maxime, repellat dolor hic?
-            </p>
+            <p>{description}</p>
             <div className={`skills__percent ${color}-color`}>
                 <div className={`skills__level ${color}-bg`}></div>
                 <div className="skills__value"></div>
@@ -22,17 +20,20 @@ const Skills = () => {
         {
             "name": "javascript",
             "value": "71",
-            "color": "orange"
+            "color": "orange",
+            "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Work with Firebase (authentication, storage)"
         },
         {
             "name": "html",
             "value": "86",
-            "color": "yellow"
+            "color": "yellow",
+            "description": "HTML5 / Correct document structure / Writing a semantic layout. Using tags like <article>, <main>, <section>, <figure> etc."
         },
         {
             "name": "css",
             "value": "82",
-            "color": "sea"
+            "color": "sea",
+            "description": "Use SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation. Love flex-box."
         }
     ];
     return (
@@ -41,13 +42,11 @@ const Skills = () => {
                 <h2 className="section-header">Skills</h2>
                 <div className="skills__container">
                     {
-                        skills.map((item, index)=>{
+                        skills.map((item, index) => {
                             return (
                                 <SkillItem
-                                key={index}
-                                name={item.name}
-                                value={item.value}
-                                color={item.color} />
+                                    key={index}
+                                    item={item} />
                             )
                         })
                     }
