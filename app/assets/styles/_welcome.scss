@@ -25,8 +25,8 @@
     .header__logo {
         width: 50%;
     }
-    .header__nav {
-        width: 50%;
+    &__nav {
+        width: 100%;
         font-family: $raleway;
         font-weight: bold;
         font-size: $primary-size;
@@ -71,7 +71,8 @@
         flex-start,
         flex-start);
         position: absolute;
-        bottom: 35%;
+        top: 50%;
+        transform: translateY(-50%);
         max-width: 400px;
         width: 100%;
         color: $main-color;

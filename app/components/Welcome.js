@@ -46,7 +46,7 @@ const Welcome = () => {
         <div className="header">
             <div className="wrapper header__wrapper">
                 <header>
-                    <Logo />
+                    {/* <Logo /> */}
                     <Nav />
                 </header>
                 <Greeting />

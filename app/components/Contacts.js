@@ -86,7 +86,7 @@ const Contacts = ({ checkContact, currentContact }) => {
         {
             "primary": true,
             "type": "phone",
-            "value": "+380-(63)-644-54-55",
+            "value": "+38-063-644-54-55",
             "url": null
         },
         {
@@ -122,23 +122,23 @@ const Contacts = ({ checkContact, currentContact }) => {
         location = "location";
 
     let toRender = null;
-    switch (currentContact) {
-        case email:
-            toRender = <ContactForm />;
-            break;
+    // switch (currentContact) {
+    //     case email:
+    //         toRender = <ContactForm />;
+    //         break;
 
-        case phone:
-            toRender = <ContactPhone />;
-            break;
+    //     case phone:
+    //         toRender = <ContactPhone />;
+    //         break;
 
-        case location:
-            toRender = <ContactLocation />;
-            break;
+    //     case location:
+    //         toRender = <ContactLocation />;
+    //         break;
 
-        default:
-            toRender = <ContactForm />;
-            break;
-    }
+    //     default:
+    //         toRender = <ContactForm />;
+    //         break;
+    // }
 
     return (
         <div className="contacts">
