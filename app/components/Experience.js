@@ -27,15 +27,15 @@ const ExperienceItem = ({ index, company, time, position, responsibility, color 
                     {responsibility.map((item, index) => {
                         return (
                             <li
-                            className={`${color}-bg-pseudo`}
-                            key={index}>{item}</li>
+                                className={`${color}-bg-pseudo`}
+                                key={index}>{item}</li>
                         )
                     })}
                 </ul>
             </div>
-            <div 
-            className={`experience__full ${color}-bd`}
-            onClick={() => fullExperience(index)} ></div>
+            <div
+                className={`experience__full ${color}-bd`}
+                onClick={() => fullExperience(index)} ></div>
         </div>
     )
 }
@@ -45,7 +45,7 @@ const Experience = () => {
         {
             "company": {
                 "name": "Wayne Enterprises, Inc.",
-                "description": "Lorem ipsum dolor sit amet.",
+                "description": "Lorem ipsum dolor sit amet."
             },
             "time": "2000-2016",
             "position": "Batman Hero",

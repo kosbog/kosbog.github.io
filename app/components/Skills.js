@@ -1,5 +1,4 @@
 import React from 'react';
-import { skillsLevelAnimation } from '../utils/utils';
 
 const SkillItem = ({ item }) => {
     const { name, value, color, description } = item;
@@ -15,41 +14,21 @@ const SkillItem = ({ item }) => {
     )
 }
 
-const Skills = () => {
-    const skills = [
-        {
-            "name": "javascript",
-            "value": "71",
-            "color": "orange",
-            "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Work with Firebase (authentication, storage)"
-        },
-        {
-            "name": "html",
-            "value": "86",
-            "color": "yellow",
-            "description": "HTML5 / Correct document structure / Writing a semantic layout. Using tags like <article>, <main>, <section>, <figure> etc."
-        },
-        {
-            "name": "css",
-            "value": "82",
-            "color": "sea",
-            "description": "Use SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation. Love flex-box."
-        }
-    ];
+const Skills = ({ api }) => {
+    console.log(api);
+    const skillsItems = api.skills.map((item, index) => {
+        return (
+            <SkillItem
+                key={index}
+                item={item} />
+        )
+    })
     return (
         <div className="skills">
             <div className="wrapper skills__wrapper">
                 <h2 className="section-header">Skills</h2>
                 <div className="skills__container">
-                    {
-                        skills.map((item, index) => {
-                            return (
-                                <SkillItem
-                                    key={index}
-                                    item={item} />
-                            )
-                        })
-                    }
+                    {skillsItems}
                 </div>
             </div>
         </div>

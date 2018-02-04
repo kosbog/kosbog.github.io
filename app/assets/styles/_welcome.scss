@@ -1,4 +1,4 @@
-.header {
+.home {
     width: inherit;
     height: inherit;
     background-image: url('../images/bg/bg2.jpg');
@@ -22,49 +22,7 @@
         space-around,
         center);
     }
-    .header__logo {
-        width: 50%;
-    }
-    &__nav {
-        width: 100%;
-        font-family: $raleway;
-        font-weight: bold;
-        font-size: $primary-size;
-        color: $main-color;
-        text-transform: uppercase;
-        padding: 20px 0;
-        @include flex(row,
-        nowrap,
-        flex-end,
-        center);
-    }
-    .nav__item {
-        display: block;
-        margin: 0 20px;
-        cursor: pointer;
-        p {
-            &:before {
-                @include after();
-                opacity: 0;
-                bottom: -25px;
-                height: 2px;
-                width: 100%;
-                background-color: $green;
-                transition: .3s;
-            }
-        }
-        &:hover {
-            color: $green;
-            & p:before {
-                opacity: 1;
-                transform: translateY(-18px);
-                transition: .3s;
-            }
-        }
-    }
-    .nav__item:last-child {
-        padding-right: 0;
-    }
+    
     .greeting {
         @include flex(column,
         nowrap,

@@ -63,11 +63,13 @@
         margin-left: 0;
     }
 
+    // *** Navigation
+    .nav {
+        display: none;
+    }
+
     // *** Welcome
     .header {
-        header {
-            display: none;
-        }
         .greeting {
             padding: 0 20px;
             align-items: center;

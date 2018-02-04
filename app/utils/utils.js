@@ -1,4 +1,4 @@
-// Helper functions
+import data from '../data/data.json';
 
 // Skills level animation
 export function skillsLevelAnimation(e) {
@@ -32,6 +32,34 @@ export function skillsLevelAnimation(e) {
 // Show full experience information
 export const fullExperience = (index) => {
     let activeElement = document.getElementsByClassName('experience__responsibility')[index];
-
     activeElement.style.height = '100%';
+}
+
+// Scroll to menu element
+export const scrollToElement = (element) => {
+    console.log(`*** Scroll to #${element} ***`);
+    let val = document.getElementsByClassName(element)[0];
+    val.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+// Get API data
+export const API = {
+    get menu() {
+        return data.menu;
+    },
+    get skills() {
+        return data.skills;
+    },
+    get experience() {
+        return data.experience;
+    },
+    get portfolio() {
+        return data.portfolio;
+    },
+    get education() {
+        return data.education;
+    },
+    get contacts() {
+        return data.contacts;
+    }
 }

@@ -1,16 +1,191 @@
 {
+  "menu": [
+    "home",
+    "about",
+    "experience",
+    "portfolio",
+    "education",
+    "contacts"
+  ],
   "skills": [
     {
-      "name" : "javascript",
-      "value": "71"
+      "name": "javascript",
+      "value": "71",
+      "color": "orange",
+      "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Work with Firebase (authentication, storage)"
     },
     {
-      "name" : "html",
-      "value": "86"
+      "name": "html",
+      "value": "86",
+      "color": "yellow",
+      "description": "HTML5 / Correct document structure / Writing a semantic layout / Using tags like <article>, <main>, <section>, <figure> etc."
     },
     {
-      "name" : "css",
-      "value": "82"
+      "name": "css",
+      "value": "82",
+      "color": "sea",
+      "description": "Use SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box."
+    }
+  ],
+  "experience": [
+    {
+      "company": {
+        "name": "Wayne Enterprises, Inc.",
+        "description": "Lorem ipsum dolor sit amet."
+      },
+      "time": "2000-2016",
+      "position": "Batman Hero",
+      "responsibility": [
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      ],
+      "color": "green"
+    },
+    {
+      "company": {
+        "name": "Star Labs",
+        "description": "Lorem ipsum dolor sit amet."
+      },
+      "time": "1995-1998",
+      "position": "Flash Hero",
+      "responsibility": [
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      ],
+      "color": "orange"
+    },
+    {
+      "company": {
+        "name": "Queen Industries",
+        "description": "Lorem ipsum dolor sit amet."
+      },
+      "time": "1998-2000",
+      "position": "Green Arrow Hero",
+      "responsibility": [
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      ],
+      "color": "sea"
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "Fairy Cake Corp",
+      "descriprion": "Bakery website",
+      "technologies": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Firebase"
+      ],
+      "image": "url/to/image",
+      "color": "yellow"
+    },
+    {
+      "name": "Fairy Cake Corp",
+      "descriprion": "Bakery website",
+      "technologies": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Firebase"
+      ],
+      "image": "url/to/image",
+      "color": "pink"
+    },
+    {
+      "name": "Fairy Cake Corp",
+      "descriprion": "Bakery website",
+      "technologies": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Firebase"
+      ],
+      "image": "url/to/image",
+      "color": "sea"
+    },
+    {
+      "name": "Fairy Cake Corp",
+      "descriprion": "Bakery website",
+      "technologies": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Firebase"
+      ],
+      "image": "url/to/image",
+      "color": "green"
+    },
+    {
+      "name": "Fairy Cake Corp",
+      "descriprion": "Bakery website",
+      "technologies": [
+        "React",
+        "Redux",
+        "Webpack",
+        "Firebase"
+      ],
+      "image": "url/to/image",
+      "color": "orange"
+    }
+  ],
+  "education": [
+    {
+      "name": "National Aviation University",
+      "time": "2014-2015",
+      "position": "Specialist of “Administrative management in the field of information security”",
+      "location": "Kiev, Ukraine",
+      "color": "yellow"
+    },
+    {
+      "name": "National Aviation University",
+      "time": "2010-2014",
+      "position": "Bachelor of “Management of information security”",
+      "location": "Kiev, Ukraine",
+      "color": "orange"
+    }
+  ],
+  "contacts": [
+    {
+      "primary": true,
+      "type": "e-mail",
+      "value": "badykos@gmail.com",
+      "url": null
+    },
+    {
+      "primary": true,
+      "type": "phone",
+      "value": "+38-063-644-54-55",
+      "url": null
+    },
+    {
+      "primary": false,
+      "type": "skype",
+      "value": "badykos",
+      "url": null
+    },
+    {
+      "primary": false,
+      "type": "linkedin",
+      "value": "Bogdan Kosytskyy",
+      "url": "https://www.linkedin.com/in/bogdan-kosytskyy/"
+    },
+    {
+      "primary": false,
+      "type": "github",
+      "value": "kosbog",
+      "url": "https://github.com/kosbog"
+    },
+    {
+      "primary": false,
+      "type": "location",
+      "value": "Ukraine, Kiev",
+      "url": null
     }
   ]
 }
