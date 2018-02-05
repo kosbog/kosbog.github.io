@@ -10,9 +10,9 @@
   "skills": [
     {
       "name": "javascript",
-      "value": "71",
+      "value": "73",
       "color": "orange",
-      "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Work with Firebase (authentication, storage)"
+      "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Using bundles like Webpack, Gulp / Working with Firebase "
     },
     {
       "name": "html",
@@ -24,52 +24,55 @@
       "name": "css",
       "value": "82",
       "color": "sea",
-      "description": "Use SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box."
+      "description": "Using SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box / Bootstrap, Foundation"
     }
   ],
   "experience": [
     {
       "company": {
-        "name": "Wayne Enterprises, Inc.",
-        "description": "Lorem ipsum dolor sit amet."
+        "name": "Lucky Labs",
+        "description": "Riga, Latvia"
       },
-      "time": "2000-2016",
-      "position": "Batman Hero",
+      "time": "11.2017 - present",
+      "position": "Front-end Developer",
       "responsibility": [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "Application development with React Native (Android, iOS);",
+        "State Management with MobX"
       ],
       "color": "green"
     },
     {
       "company": {
-        "name": "Star Labs",
-        "description": "Lorem ipsum dolor sit amet."
+        "name": "Private Dev",
+        "description": "Kiev, Ukraine"
       },
-      "time": "1995-1998",
-      "position": "Flash Hero",
+      "time": "07.2016 - 10.2017",
+      "position": "Front-end Developer",
       "responsibility": [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "Development of projects in AngularJS, their further support and improvement;",
+        "Work with REST API;",
+        "Build with module bundles like Webpack and Gulp;",
+        "Landings development;",
+        "Experience with different libraries like jQuery, Hammer.js, Velocity.js etc."
       ],
-      "color": "orange"
+      "color": "sea"
     },
     {
       "company": {
-        "name": "Queen Industries",
-        "description": "Lorem ipsum dolor sit amet."
+        "name": "PROMO.UA",
+        "description": "Kiev, Ukraine"
       },
-      "time": "1998-2000",
-      "position": "Green Arrow Hero",
+      "time": "08.2015 - 07.2016",
+      "position": "HTML-coder",
       "responsibility": [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "Layout of pages for different websites (clients);",
+        "Work in the admin panel (hosting, ftp): editing page design, implementation, editing texts and meta tags;",
+        "Layout of landings and their further support;",
+        "Advice for clients about the optimization website pages of code;",
+        "Work with a variety of CMS-systems (WordPress, OpenCart, Magento and others);",
+        "During the work, according to my recommendations, a new kind of product have been introduced (mini Landing) and standards for the layout of the pages, which led to an increase in demand for the product."
       ],
-      "color": "sea"
+      "color": "orange"
     }
   ],
   "portfolio": [
@@ -155,7 +158,7 @@
       "primary": true,
       "type": "e-mail",
       "value": "badykos@gmail.com",
-      "url": null
+      "url": "mailto:badykos@gmail.com?subject=We checkout your CV!"
     },
     {
       "primary": true,
@@ -173,13 +176,13 @@
       "primary": true,
       "type": "linkedin",
       "value": "Bogdan Kosytskyy",
-      "url": "https://www.linkedin.com/in/bogdan-kosytskyy/"
+      "url": "//www.linkedin.com/in/bogdan-kosytskyy/"
     },
     {
       "primary": true,
       "type": "github",
-      "value": "kosbog",
-      "url": "https://github.com/kosbog"
+      "value": "@kosbog",
+      "url": "//github.com/kosbog"
     },
     {
       "primary": false,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, fullExperience, API } from '../utils/utils';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
@@ -43,7 +43,7 @@ class Home extends Component {
                 <Welcome scrollToElement={scrollToElement} />
                 <About />
                 <Skills api={API} />
-                <Experience api={API} />
+                <Experience api={API} fullExperience={fullExperience} />
                 <Portfolio
                     api={API}
                     portfolioFull={this.state.portfolioFull}

@@ -5,14 +5,11 @@
 }
 
 @media screen and (max-width: 1024px) {
-
     // *** Common
     .wrapper {
         padding-left: 20px;
         padding-right: 20px;
-    }
-
-    // *** Experience
+    } // *** Experience
     .experience {
         &__container {
             flex-direction: column;
@@ -20,7 +17,7 @@
         &__item {
             flex-direction: column;
             width: 100%;
-            > div {
+            >div {
                 width: 100%;
             }
         }
@@ -33,14 +30,12 @@
         .responsibility__list {
             margin-left: 20px;
         }
-    }
-
-     // *** Education
-     .education {
+    } // *** Education
+    .education {
         &__item {
             flex-direction: column;
             width: 100%;
-            > div {
+            >div {
                 width: 100%;
             }
         }
@@ -61,15 +56,12 @@
     //  *** Common
     .ml-90 {
         margin-left: 0;
-    }
-
-    // *** Navigation
+    } // *** Navigation
     .nav {
         display: none;
-    }
-
-    // *** Welcome
-    .header {
+    } // *** Welcome
+    .home {
+        background-size: cover;
         .greeting {
             padding: 0 20px;
             align-items: center;
@@ -81,20 +73,18 @@
                 line-height: 1em;
                 font-size: 3em;
             }
-            p, .btn {
+            p,
+            .btn {
                 color: #d0d0d0;
             }
         }
         .photo {
             display: none;
         }
-    }
-
-    // *** About
+    } // *** About
     .about {
         &__description {
             &.about--self {
-                padding-top: 110px;
                 flex-direction: column;
             }
         }
@@ -106,9 +96,7 @@
             width: 100%;
             padding: 0;
         }
-    }
-
-    // *** Skills
+    } // *** Skills
     .skills {
         &__container {
             flex-direction: column;
@@ -116,10 +104,8 @@
         &__item {
             width: 100%;
         }
-    }
-
-    // *** Portfolio
-    .portfolio{
+    } // *** Portfolio
+    .portfolio {
         &__container {
             flex-direction: column;
         }
@@ -129,6 +115,11 @@
             &:nth-child(3) {
                 margin-right: auto;
             }
+        }
+    }
+    .contacts {
+        &__type {
+            flex-direction: column;
         }
     }
 }

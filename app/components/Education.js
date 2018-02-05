@@ -1,5 +1,4 @@
 import React from 'react';
-import { fullExperience } from '../utils/utils';
 
 const EducationItem = ({ item }) => {
   const { name, time, position, location, color } = item;

@@ -5,7 +5,8 @@ const Greeting = ({ scrollToElement }) => {
     return (
         <div className="greeting">
             <h1>Bogdan Kosytskyi</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisicing.</p>
+            <p><q>Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time</q></p>
+            <span>Thomas A. Edison</span>
             <div className="btn">
                 <button type="button" onClick={() => scrollToElement('about')}>more</button>
             </div>

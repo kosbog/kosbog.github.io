@@ -67,7 +67,10 @@ const ContactsTypeItem = ({ item, checkContact, currentContact }) => {
                 htmlFor={type}
                 className="type__label">
                 <span className="type__name">{type}</span>
-                <span className="type__value">{value}</span>
+                {!!url
+                    ? <a href={url} target="_blank" className="type__value">{value}</a>
+                    : <span className="type__value">{value}</span>
+                }
                 <div className="type__icon">
                     <span className={`icon icon-${type}`}></span>
                 </div>

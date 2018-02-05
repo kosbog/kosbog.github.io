@@ -43,7 +43,16 @@
             color: $default-color;
         }
         p {
-            padding-bottom: 30px;
+            padding-bottom: 7px;
+            quotes: "\00AB" "\00BB";
+            font-style: italic;
+            font-weight: 100;
+            font-size: 15px;
+        }
+        span {
+            padding-bottom: 40px;
+            font-size: 12px;
+            font-weight: bold;
         }
     }
     .photo {

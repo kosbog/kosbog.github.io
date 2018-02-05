@@ -1,7 +1,6 @@
 import React from 'react';
-import { fullExperience } from '../utils/utils';
 
-const ExperienceItem = ({ index, item }) => {
+const ExperienceItem = ({ index, item, fullExperience }) => {
     const { company, time, position, responsibility, color } = item;
     return (
         <div className="experience__item">
@@ -41,14 +40,15 @@ const ExperienceItem = ({ index, item }) => {
     )
 }
 
-const Experience = ({ api }) => {
+const Experience = ({ api, fullExperience }) => {
     const { experience } = api;
     const experienceItems = experience.map((item, index) => {
         return (
             <ExperienceItem
                 key={index}
                 index={index}
-                item={item} />
+                item={item}
+                fullExperience={fullExperience} />
         );
     })
     return (

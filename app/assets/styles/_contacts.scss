@@ -12,9 +12,9 @@
     }
     .type {
         &__item {
-            width: calc(100% / 2.05);
+            width: 100%;
+            margin: 5px;
             transition: border .3s;
-            cursor: pointer;
             &:hover label {
                 border: 2px solid $main-color;
                 transition: border .2s;
@@ -52,7 +52,6 @@
             width: calc(100% - 4px);
             height: calc(100% - 4px);
             background-color: $bg5;
-            cursor: pointer;
             &:hover {
                opacity: 0;
             }
