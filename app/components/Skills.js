@@ -15,8 +15,8 @@ const SkillItem = ({ item }) => {
 }
 
 const Skills = ({ api }) => {
-    console.log(api);
-    const skillsItems = api.skills.map((item, index) => {
+    const { skills } = api;
+    const skillsItems = skills.map((item, index) => {
         return (
             <SkillItem
                 key={index}

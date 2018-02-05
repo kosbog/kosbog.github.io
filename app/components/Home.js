@@ -39,16 +39,18 @@ class Home extends Component {
     render() {
         return (
             <div className="container">
-                <Navigation scrollToElement={scrollToElement} api={API}/>
+                <Navigation scrollToElement={scrollToElement} api={API} />
                 <Welcome scrollToElement={scrollToElement} />
                 <About />
                 <Skills api={API} />
-                <Experience />
+                <Experience api={API} />
                 <Portfolio
+                    api={API}
                     portfolioFull={this.state.portfolioFull}
                     showMorePortfolio={this.showMorePortfolio} />
-                <Education />
+                <Education api={API} />
                 <Contacts
+                    api={API}
                     checkContact={this.checkContact}
                     currentContact={this.state.currentContact} />
             </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { fullExperience } from '../utils/utils';
 
-const ExperienceItem = ({ index, company, time, position, responsibility, color }) => {
+const ExperienceItem = ({ index, item }) => {
+    const { company, time, position, responsibility, color } = item;
     return (
         <div className="experience__item">
             <div className={`experience__position ${color}-bg-pseudo`}>
@@ -40,69 +41,22 @@ const ExperienceItem = ({ index, company, time, position, responsibility, color 
     )
 }
 
-const Experience = () => {
-    const experience = [
-        {
-            "company": {
-                "name": "Wayne Enterprises, Inc.",
-                "description": "Lorem ipsum dolor sit amet."
-            },
-            "time": "2000-2016",
-            "position": "Batman Hero",
-            "responsibility": [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            ],
-            "color": "green"
-        },
-        {
-            "company": {
-                "name": "Star Labs",
-                "description": "Lorem ipsum dolor sit amet.",
-            },
-            "time": "1995-1998",
-            "position": "Flash Hero",
-            "responsibility": [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            ],
-            "color": "orange"
-        },
-        {
-            "company": {
-                "name": "Queen Industries",
-                "description": "Lorem ipsum dolor sit amet.",
-            },
-            "time": "1998-2000",
-            "position": "Green Arrow Hero",
-            "responsibility": [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit - Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            ],
-            "color": "sea"
-        }
-    ];
+const Experience = ({ api }) => {
+    const { experience } = api;
+    const experienceItems = experience.map((item, index) => {
+        return (
+            <ExperienceItem
+                key={index}
+                index={index}
+                item={item} />
+        );
+    })
     return (
         <div className="experience">
             <div className="wrapper experience__wrapper">
                 <h2 className="section-header">Experience</h2>
                 <div className="experience__container">
-                    {experience.map((item, index) => {
-                        return (
-                            <ExperienceItem
-                                key={index}
-                                index={index}
-                                company={item.company}
-                                time={item.time}
-                                position={item.position}
-                                responsibility={item.responsibility}
-                                color={item.color} />
-                        );
-                    })}
+                    {experienceItems}
                 </div>
             </div>
         </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { fullExperience } from '../utils/utils';
 
-const EducationItem = ({ name, time, position, location, color }) => {
+const EducationItem = ({ item }) => {
+  const { name, time, position, location, color } = item;
   return (
     <div className="education__item">
       <div className={`education__position ${color}-bg-pseudo`}>
@@ -26,39 +27,21 @@ const EducationItem = ({ name, time, position, location, color }) => {
   )
 }
 
-const Education = () => {
-  const education = [
-    {
-      "name": "National Aviation University",
-      "time": "2014-2015",
-      "position": "Specialist of “Administrative management in the field of information security”",
-      "location": "Kiev, Ukraine",
-      "color": "yellow"
-    },
-    {
-      "name": "National Aviation University",
-      "time": "2010-2014",
-      "position": "Bachelor of “Management of information security”",
-      "location": "Kiev, Ukraine",
-      "color": "orange"
-    }
-  ];
+const Education = ({ api }) => {
+  const { education } = api;
+  const educationItems = education.map((item, index) => {
+    return (
+      <EducationItem
+        key={index}
+        item={item} />
+    );
+  })
   return (
     <div className="education">
       <div className="wrapper education__wrapper">
         <h2 className="section-header">education</h2>
         <div className="education__container">
-          {education.map((item, index) => {
-            return (
-              <EducationItem
-                key={index}
-                name={item.name}
-                time={item.time}
-                position={item.position}
-                location={item.location}
-                color={item.color} />
-            );
-          })}
+          {educationItems}
         </div>
       </div>
     </div>

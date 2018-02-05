@@ -1,7 +1,8 @@
 import React from 'react';
 import space from '../assets/images/portfolio/space.jpeg';
 
-const PortfolioItem = ({ name, descriprion, technologies, image, color }) => {
+const PortfolioItem = ({ item }) => {
+  const { name, descriprion, technologies, image, color } = item;
   return (
     <div className="portfolio__item">
       <div className="item--wrapper">
@@ -23,54 +24,17 @@ const PortfolioItem = ({ name, descriprion, technologies, image, color }) => {
   )
 }
 
-const Portfolio = ({ portfolioFull, showMorePortfolio}) => {
-  const portfolio = [
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React", "Redux", "Webpack", "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "yellow"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React", "Redux", "Webpack", "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "pink"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React", "Redux", "Webpack", "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "sea"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React", "Redux", "Webpack", "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "green"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React", "Redux", "Webpack", "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "orange"
+const Portfolio = ({ portfolioFull, showMorePortfolio, api }) => {
+  const { portfolio } = api;
+  const portfolioItems = portfolio.map((item, index) => {
+    if (index < portfolioFull) {
+      return (
+        <PortfolioItem
+          key={index}
+          item={item} />
+      )
     }
-  ]
+  })
   return (
     <div className="portfolio">
       <div className="wrapper portfolio__wrapper">
@@ -84,18 +48,7 @@ const Portfolio = ({ portfolioFull, showMorePortfolio}) => {
           </p>
         </div>
         <div className="portfolio__container">
-          {portfolio.map((item, index) => {
-            if (index < portfolioFull){
-            return (
-              <PortfolioItem
-                key={index}
-                name={item.name}
-                descriprion={item.descriprion}
-                technologies={item.technologies}
-                image={item.image}
-                color={item.color} />
-            )}
-          })}
+          {portfolioItems}
         </div>
         <div className="btn portfolio__btn" onClick={showMorePortfolio}>
           <button type="button">more</button>

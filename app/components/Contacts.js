@@ -51,7 +51,8 @@ const ContactForm = ({ }) => {
     )
 }
 
-const ContactsTypeItem = ({ type, value, url, checkContact, currentContact }) => {
+const ContactsTypeItem = ({ item, checkContact, currentContact }) => {
+    const { type, value, url } = item;
     return (
         <div className="contacts__item type__item ">
             <input
@@ -75,45 +76,8 @@ const ContactsTypeItem = ({ type, value, url, checkContact, currentContact }) =>
     )
 }
 
-const Contacts = ({ checkContact, currentContact }) => {
-    const contacts = [
-        {
-            "primary": true,
-            "type": "e-mail",
-            "value": "badykos@gmail.com",
-            "url": null
-        },
-        {
-            "primary": true,
-            "type": "phone",
-            "value": "+38-063-644-54-55",
-            "url": null
-        },
-        {
-            "primary": false,
-            "type": "skype",
-            "value": "badykos",
-            "url": null
-        },
-        {
-            "primary": false,
-            "type": "linkedin",
-            "value": "Bogdan Kosytskyy",
-            "url": "https://www.linkedin.com/in/bogdan-kosytskyy/"
-        },
-        {
-            "primary": false,
-            "type": "github",
-            "value": "kosbog",
-            "url": "https://github.com/kosbog"
-        },
-        {
-            "primary": false,
-            "type": "location",
-            "value": "Ukraine, Kiev",
-            "url": null
-        }
-    ],
+const Contacts = ({ api, checkContact, currentContact }) => {
+    const { contacts } = api,
         primaryContacts = contacts.filter(item => {
             return item.primary === true;
         }),
@@ -122,23 +86,24 @@ const Contacts = ({ checkContact, currentContact }) => {
         location = "location";
 
     let toRender = null;
-    // switch (currentContact) {
-    //     case email:
-    //         toRender = <ContactForm />;
-    //         break;
 
-    //     case phone:
-    //         toRender = <ContactPhone />;
-    //         break;
+    switch (currentContact) {
+        // case email:
+        //     toRender = <ContactForm />;
+        //     break;
 
-    //     case location:
-    //         toRender = <ContactLocation />;
-    //         break;
+        // case phone:
+        //     toRender = <ContactPhone />;
+        //     break;
 
-    //     default:
-    //         toRender = <ContactForm />;
-    //         break;
-    // }
+        // case location:
+        //     toRender = <ContactLocation />;
+        //     break;
+
+        // default:
+        //     toRender = <ContactForm />;
+        //     break;
+    }
 
     return (
         <div className="contacts">
@@ -158,9 +123,7 @@ const Contacts = ({ checkContact, currentContact }) => {
                             return (
                                 <ContactsTypeItem
                                     key={index}
-                                    type={item.type}
-                                    value={item.value}
-                                    url={item.url}
+                                    item={item}
                                     checkContact={checkContact}
                                     currentContact={currentContact} />
                             )

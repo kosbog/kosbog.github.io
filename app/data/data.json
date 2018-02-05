@@ -170,13 +170,13 @@
       "url": null
     },
     {
-      "primary": false,
+      "primary": true,
       "type": "linkedin",
       "value": "Bogdan Kosytskyy",
       "url": "https://www.linkedin.com/in/bogdan-kosytskyy/"
     },
     {
-      "primary": false,
+      "primary": true,
       "type": "github",
       "value": "kosbog",
       "url": "https://github.com/kosbog"
