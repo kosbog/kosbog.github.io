@@ -1,0 +1,67 @@
+.home {
+    width: inherit;
+    height: inherit;
+    background-image: url('../images/bg/bg2.jpg');
+    background-size: 100% 100%;
+    &:after {
+        @include after();
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    &__wrapper {
+        width: inherit;
+        height: inherit;
+        z-index: 1;
+    }
+    header {
+        width: 100%;
+        @include flex(row,
+        nowrap,
+        space-around,
+        center);
+    }
+    
+    .greeting {
+        @include flex(column,
+        nowrap,
+        flex-start,
+        flex-start);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 400px;
+        width: 100%;
+        color: $main-color;
+        h1,
+        button {
+            font-family: $raleway;
+            text-transform: uppercase;
+        }
+        h1 {
+            color: $default-color;
+        }
+        p {
+            padding-bottom: 7px;
+            quotes: "\00AB" "\00BB";
+            font-style: italic;
+            font-weight: 100;
+            font-size: 15px;
+        }
+        span {
+            padding-bottom: 40px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+    .photo {
+        width: 35vw;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import './assets/index.scss';
+import './assets/styles/index.scss';
 
 ReactDOM.render(
     <App />,

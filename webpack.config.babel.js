@@ -32,18 +32,22 @@ const Config = {
                 })
             },
             {
-                test: /\.(jpg|png|svg)$/,
+                test: /\.(jpg|jpeg|png|svg)$/,
                 loader: 'file-loader',
                 options: {
                     name: 'app/assets/images/[name].[ext]'
                 }
             },
             {
-                test: /\.(mp4|webm)$/,
+                test: /\.(mp4|webm|ogv|ogg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'app/assets/video/[name].[ext]'
+                    name: 'app/assets/videos/[name].[ext]'
                 }
+            },
+            {
+                test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                loader: 'file-loader?name=app/assets/fonts/[name].[ext]'
             }
         ]
     },

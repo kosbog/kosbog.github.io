@@ -1,0 +1,55 @@
+.education {
+  background-color: $bg4;
+  color: $main-color;
+  padding-top: 90px;
+  span {
+      display: block;
+  }
+  &__container {
+      @include flex(column, nowrap, space-between, flex-start);
+      padding-bottom: 90px;
+  }
+  &__item {
+      @include flex(row, wrap, space-between, center);
+      width: 100%;
+      padding: 50px 0 0;
+  }
+  &__position {
+      @include flex(row, nowrap, flex-start, center);
+      &:before {
+          @include after();
+          position: relative;
+          left: 0;
+          margin-right: 40px;
+          width: 40px;
+          height: 40px;
+      }
+  }
+  &__university {
+      @include flex(column, nowrap, space-between, flex-start);
+  }
+  .position {
+      &__item {
+          @include flex(column, nowrap, space-between, flex-start);
+          font-weight: bold;
+          font-size: $default-size;
+          text-transform: uppercase;
+      }
+      &--name {
+          font-family: "Raleway", sans-serif;
+      }
+      &--time {
+          font-size: $primary-size;
+      }
+  }
+  .university {
+      &__item {
+          font-size: 16px;
+      }
+      &--name {
+          font-weight: bold;
+          color: $default-color;
+          text-transform: uppercase;
+      }
+  }
+}

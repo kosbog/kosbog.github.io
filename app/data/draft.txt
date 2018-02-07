@@ -1,0 +1,60 @@
+{
+  "name": "Fairy Cake Corp",
+  "descriprion": "Bakery website",
+  "technologies": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Firebase"
+  ],
+  "image": "url/to/image",
+  "color": "yellow"
+},
+{
+  "name": "Fairy Cake Corp",
+  "descriprion": "Bakery website",
+  "technologies": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Firebase"
+  ],
+  "image": "url/to/image",
+  "color": "pink"
+},
+{
+  "name": "Fairy Cake Corp",
+  "descriprion": "Bakery website",
+  "technologies": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Firebase"
+  ],
+  "image": "url/to/image",
+  "color": "sea"
+},
+{
+  "name": "Fairy Cake Corp",
+  "descriprion": "Bakery website",
+  "technologies": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Firebase"
+  ],
+  "image": "url/to/image",
+  "color": "green"
+},
+{
+  "name": "Fairy Cake Corp",
+  "descriprion": "Bakery website",
+  "technologies": [
+    "React",
+    "Redux",
+    "Webpack",
+    "Firebase"
+  ],
+  "image": "url/to/image",
+  "color": "orange"
+}

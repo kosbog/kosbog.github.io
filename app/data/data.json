@@ -1,0 +1,134 @@
+{
+  "menu": [
+    "home",
+    "about",
+    "experience",
+    "portfolio",
+    "education",
+    "contacts"
+  ],
+  "about": [
+    "From childhood I didn't dream about that i will sit at the computer and write a code - I wanted to become a professional football player. I even played for the school football team, yeah!.. But, my \"football career\" ended when I started studying at the university. I have a fancy for web development in the second year of study. Thereat in simple textpad I created my first HTML page and connected my first CSS file to it. It was an unforgettable feeling!"
+  ],
+  "skills": [{
+      "name": "javascript",
+      "value": "73",
+      "color": "orange",
+      "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Using bundles like Webpack, Gulp / Working with Firebase "
+    },
+    {
+      "name": "html",
+      "value": "86",
+      "color": "yellow",
+      "description": "HTML5 / Correct document structure / Writing a semantic layout / Using tags like <article>, <main>, <section>, <figure> etc."
+    },
+    {
+      "name": "css",
+      "value": "82",
+      "color": "sea",
+      "description": "Using SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box / Bootstrap, Foundation"
+    }
+  ],
+  "experience": [{
+      "company": {
+        "name": "Lucky Labs",
+        "description": "Riga, Latvia"
+      },
+      "time": "11.2017 - present",
+      "position": "Front-end Developer",
+      "responsibility": [
+        "Application development with React Native (Android, iOS);",
+        "State Management with MobX"
+      ],
+      "color": "green"
+    },
+    {
+      "company": {
+        "name": "Private Dev",
+        "description": "Kiev, Ukraine"
+      },
+      "time": "07.2016 - 10.2017",
+      "position": "Front-end Developer",
+      "responsibility": [
+        "Development of projects in AngularJS, their further support and improvement;",
+        "Work with REST API;",
+        "Build with module bundles like Webpack and Gulp;",
+        "Landings development;",
+        "Experience with different libraries like jQuery, Hammer.js, Velocity.js etc."
+      ],
+      "color": "sea"
+    },
+    {
+      "company": {
+        "name": "PROMO.UA",
+        "description": "Kiev, Ukraine"
+      },
+      "time": "08.2015 - 07.2016",
+      "position": "HTML-coder",
+      "responsibility": [
+        "Layout of pages for different websites (clients);",
+        "Work in the admin panel (hosting, ftp): editing page design, implementation, editing texts and meta tags;",
+        "Layout of landings and their further support;",
+        "Advice for clients about the optimization website pages of code;",
+        "Work with a variety of CMS-systems (WordPress, OpenCart, Magento and others);",
+        "During the work, according to my recommendations, a new kind of product have been introduced (mini Landing) and standards for the layout of the pages, which led to an increase in demand for the product."
+      ],
+      "color": "orange"
+    }
+  ],
+  "portfolio": [
+
+  ],
+  "education": [{
+      "name": "National Aviation University",
+      "time": "2014-2015",
+      "position": "Specialist of “Administrative management in the field of information security”",
+      "location": "Kiev, Ukraine",
+      "color": "yellow"
+    },
+    {
+      "name": "National Aviation University",
+      "time": "2010-2014",
+      "position": "Bachelor of “Management of information security”",
+      "location": "Kiev, Ukraine",
+      "color": "orange"
+    }
+  ],
+  "contacts": [{
+      "primary": true,
+      "type": "e-mail",
+      "value": "badykos@gmail.com",
+      "url": "mailto:badykos@gmail.com?subject=We checkout your CV!"
+    },
+    {
+      "primary": true,
+      "type": "phone",
+      "value": "+38-063-644-54-55",
+      "url": null
+    },
+    {
+      "primary": false,
+      "type": "skype",
+      "value": "badykos",
+      "url": null
+    },
+    {
+      "primary": true,
+      "type": "linkedin",
+      "value": "Bogdan Kosytskyy",
+      "url": "//www.linkedin.com/in/bogdan-kosytskyy/"
+    },
+    {
+      "primary": true,
+      "type": "github",
+      "value": "@kosbog",
+      "url": "//github.com/kosbog"
+    },
+    {
+      "primary": false,
+      "type": "location",
+      "value": "Ukraine, Kiev",
+      "url": null
+    }
+  ]
+}
