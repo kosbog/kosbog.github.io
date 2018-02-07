@@ -7,8 +7,10 @@
     "education",
     "contacts"
   ],
-  "skills": [
-    {
+  "about": [
+    "From childhood I didn't dream about that i will sit at the computer and write a code - I wanted to become a professional football player. I even played for the school football team, yeah!.. But, my \"football career\" ended when I started studying at the university. I have a fancy for web development in the second year of study. Thereat in simple textpad I created my first HTML page and connected my first CSS file to it. It was an unforgettable feeling!"
+  ],
+  "skills": [{
       "name": "javascript",
       "value": "73",
       "color": "orange",
@@ -27,8 +29,7 @@
       "description": "Using SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box / Bootstrap, Foundation"
     }
   ],
-  "experience": [
-    {
+  "experience": [{
       "company": {
         "name": "Lucky Labs",
         "description": "Riga, Latvia"
@@ -76,69 +77,9 @@
     }
   ],
   "portfolio": [
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React",
-        "Redux",
-        "Webpack",
-        "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "yellow"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React",
-        "Redux",
-        "Webpack",
-        "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "pink"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React",
-        "Redux",
-        "Webpack",
-        "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "sea"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React",
-        "Redux",
-        "Webpack",
-        "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "green"
-    },
-    {
-      "name": "Fairy Cake Corp",
-      "descriprion": "Bakery website",
-      "technologies": [
-        "React",
-        "Redux",
-        "Webpack",
-        "Firebase"
-      ],
-      "image": "url/to/image",
-      "color": "orange"
-    }
+
   ],
-  "education": [
-    {
+  "education": [{
       "name": "National Aviation University",
       "time": "2014-2015",
       "position": "Specialist of “Administrative management in the field of information security”",
@@ -153,8 +94,7 @@
       "color": "orange"
     }
   ],
-  "contacts": [
-    {
+  "contacts": [{
       "primary": true,
       "type": "e-mail",
       "value": "badykos@gmail.com",

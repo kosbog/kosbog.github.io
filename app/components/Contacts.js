@@ -114,10 +114,8 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                 <div className="contacts__description">
                     <h2 className="section-header">contact</h2>
                     <p className="ml-90">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dolor reiciendis quae voluptatum tenetur sapiente temporibus nesciunt
-                        praesentium amet esse possimus tempore repudiandae neque,
-                        doloribus, aspernatur, vero quod. Libero, illum officiis.
+                        You can contact me by e-mail or by phone. And you can find me on GitHub and in the social network "LinkedIn". 
+                        All information for communication you will find below
                     </p>
                 </div>
                 <div className="contacts__container">
@@ -132,9 +130,9 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                             )
                         })}
                     </div>
-                    <div className="contacts__info">
+                    {/* <div className="contacts__info">
                         {toRender}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

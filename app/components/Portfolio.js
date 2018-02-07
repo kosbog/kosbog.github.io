@@ -35,6 +35,7 @@ const Portfolio = ({ portfolioFull, showMorePortfolio, api }) => {
       )
     }
   })
+  
   return (
     <div className="portfolio">
       <div className="wrapper portfolio__wrapper">

@@ -42,8 +42,19 @@ export const scrollToElement = (element) => {
     val.scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
+// Get current year
+export const getYear = () => {
+    const year = new Date().getFullYear(),
+        element = document.getElementsByClassName('current-year')[0];
+
+    element.innerHTML = `@ ${year}`;
+}
+
 // Get API data
 export const API = {
+    get about() {
+        return data.about;
+    },
     get menu() {
         return data.menu;
     },

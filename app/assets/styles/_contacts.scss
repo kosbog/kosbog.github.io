@@ -1,7 +1,7 @@
 .contacts {
     background-color: $bg5;
     color: $main-color;
-    padding: 110px 0 90px;
+    padding: 110px 0;
     &__container {
         @include flex(column, wrap, flex-start, center);
         padding-top: 90px;

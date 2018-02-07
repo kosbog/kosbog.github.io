@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, fullExperience, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, API } from '../utils/utils';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
@@ -8,6 +8,7 @@ import Education from './Education';
 import Portfolio from './Portfolio';
 import Contacts from './Contacts';
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 class Home extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class Home extends Component {
     componentDidMount() {
         document.addEventListener('scroll', skillsLevelAnimation);
         document.removeEventListener('scroll', skillsLevelAnimation, true);
+        getYear();
     }
 
     showMorePortfolio() {
@@ -37,6 +39,7 @@ class Home extends Component {
     }
 
     render() {
+        console.log(API.portfolio.length);
         return (
             <div className="container">
                 <Navigation scrollToElement={scrollToElement} api={API} />
@@ -44,15 +47,17 @@ class Home extends Component {
                 <About />
                 <Skills api={API} />
                 <Experience api={API} fullExperience={fullExperience} />
-                <Portfolio
-                    api={API}
-                    portfolioFull={this.state.portfolioFull}
-                    showMorePortfolio={this.showMorePortfolio} />
+                {!!API.portfolio.length &&
+                    <Portfolio
+                        api={API}
+                        portfolioFull={this.state.portfolioFull}
+                        showMorePortfolio={this.showMorePortfolio} />}
                 <Education api={API} />
                 <Contacts
                     api={API}
                     checkContact={this.checkContact}
                     currentContact={this.state.currentContact} />
+                <Footer />
             </div>
         );
     }
