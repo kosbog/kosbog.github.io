@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, API } from '../utils/utils';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
@@ -26,6 +26,7 @@ class Home extends Component {
         document.addEventListener('scroll', skillsLevelAnimation);
         document.removeEventListener('scroll', skillsLevelAnimation, true);
         getYear();
+        checkPreloader();
     }
 
     showMorePortfolio() {
@@ -39,7 +40,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(API.portfolio.length);
         return (
             <div className="container">
                 <Navigation scrollToElement={scrollToElement} api={API} />

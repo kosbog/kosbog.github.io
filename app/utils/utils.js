@@ -50,6 +50,17 @@ export const getYear = () => {
     element.innerHTML = `@ ${year}`;
 }
 
+// Preloader
+export const checkPreloader = () => {
+    const img = new Image(),
+        localImg = document.getElementsByClassName('photo__image')[0];
+    img.onload = () => {
+        console.log('image loaded');
+    }
+    img.src = '../assets/images/self/self.png';
+    console.log(img);
+}
+
 // Get API data
 export const API = {
     get about() {

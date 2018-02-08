@@ -17,7 +17,7 @@ const Greeting = ({ scrollToElement }) => {
 const Photo = () => {
     return (
         <div className="photo">
-            <img src={photo} alt="" />
+            <img src={photo} alt="I am" className="photo__image" />
         </div>
     )
 }
