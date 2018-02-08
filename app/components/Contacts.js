@@ -130,9 +130,11 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                             )
                         })}
                     </div>
-                    {/* <div className="contacts__info">
-                        {toRender}
-                    </div> */}
+                    <div className="contacts__info">
+                        {/* {toRender} */}
+                        <a href="/app/data/CV_Bogdan_Kosytskyy.pdf" download>download</a>
+                        <a href="/app/data/CV_Bogdan_Kosytskyy.pdf" target="_blank">download</a>
+                    </div>
                 </div>
             </div>
         </div>

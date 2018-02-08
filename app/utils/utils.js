@@ -19,7 +19,7 @@ export function skillsLevelAnimation(e) {
 
         [...valueElement].forEach(item => {
             for (let j = 0; j <= skillValue[valueIndex]; j++) {
-                setTimeout(function() {
+                setTimeout(function () {
                     item.innerHTML = `${j}%`;
                 }, j * 33);
             }
@@ -48,6 +48,18 @@ export const getYear = () => {
         element = document.getElementsByClassName('current-year')[0];
 
     element.innerHTML = `@ ${year}`;
+}
+
+// Detect browsers
+export const isSupportBrowser = () => {
+    const isIE = /*@cc_on!@*/false || !!document.documentMode,
+        isEdge = !isIE && !!window.StyleMedia,
+        usAg = window.navigator.userAgent,
+        isOperaMini = (usAg.indexOf('Opera Mini') > -1),
+        isOpera = (usAg.indexOf('Opera') > -1),
+        isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
+
+    return isIE || isEdge || isOperaMini || isIOS ? (true, console.log(` *** Your browser doesnt support downloading files *** `)) : (false, console.log(` *** Your browser supports downloading files *** `));
 }
 
 // Preloader

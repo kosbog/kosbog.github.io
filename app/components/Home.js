@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, isSupportBrowser, API } from '../utils/utils';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
@@ -27,6 +27,7 @@ class Home extends Component {
         document.removeEventListener('scroll', skillsLevelAnimation, true);
         getYear();
         checkPreloader();
+        isSupportBrowser();
     }
 
     showMorePortfolio() {
