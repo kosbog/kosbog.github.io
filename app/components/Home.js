@@ -15,7 +15,8 @@ class Home extends Component {
         super(props);
         this.state = {
             portfolioFull: 3,
-            currentContact: "e-mail"
+            currentContact: "e-mail",
+            isSupportBrowser: null
         };
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
@@ -27,7 +28,6 @@ class Home extends Component {
         document.removeEventListener('scroll', skillsLevelAnimation, true);
         getYear();
         checkPreloader();
-        isSupportBrowser();
     }
 
     showMorePortfolio() {
@@ -41,6 +41,20 @@ class Home extends Component {
     }
 
     render() {
+        let isIE = /*@cc_on!@*/false || !!document.documentMode,
+            isEdge = !isIE && !!window.StyleMedia,
+            usAg = window.navigator.userAgent,
+            isOperaMini = (usAg.indexOf('Opera Mini') > -1),
+            isOpera = (usAg.indexOf('Opera') > -1),
+            isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
+debugger
+            if (isIE || isEdge || isOperaMini || isIOS) {
+             this.setState({
+                 isSupportBrowser: true,
+                 currentContact: 'fif'
+             });
+         }
+         console.log(this.state.isSupportBrowser, this.state.currentContact);
         return (
             <div className="container">
                 <Navigation scrollToElement={scrollToElement} api={API} />

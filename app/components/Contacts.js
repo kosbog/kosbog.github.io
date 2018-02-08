@@ -84,29 +84,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
         primaryContacts = contacts.filter(item => {
             return item.primary === true;
         }),
-        email = "e-mail",
-        phone = "phone",
-        location = "location";
-
-    let toRender = null;
-
-    switch (currentContact) {
-        // case email:
-        //     toRender = <ContactForm />;
-        //     break;
-
-        // case phone:
-        //     toRender = <ContactPhone />;
-        //     break;
-
-        // case location:
-        //     toRender = <ContactLocation />;
-        //     break;
-
-        // default:
-        //     toRender = <ContactForm />;
-        //     break;
-    }
+        url = '/app/data/CV_Bogdan_Kosytskyy.pdf';
 
     return (
         <div className="contacts">
@@ -114,7 +92,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                 <div className="contacts__description">
                     <h2 className="section-header">contact</h2>
                     <p className="ml-90">
-                        You can contact me by e-mail or by phone. And you can find me on GitHub and in the social network "LinkedIn". 
+                        You can contact me by e-mail or by phone. And you can find me on GitHub and in the social network "LinkedIn".
                         All information for communication you will find below
                     </p>
                 </div>
@@ -130,10 +108,11 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                             )
                         })}
                     </div>
-                    <div className="contacts__info">
-                        {/* {toRender} */}
-                        <a href="/app/data/CV_Bogdan_Kosytskyy.pdf" download>download</a>
-                        <a href="/app/data/CV_Bogdan_Kosytskyy.pdf" target="_blank">download</a>
+                    <div className="contacts__cv">
+                        <div className="cv">
+                            <p className="cv__text">And download my CV <span className="cv__extension">(.pdf)</span></p>
+                            <a className="cv__link" href={url} download>download</a>
+                            <a className="cv__link" href={url} target="_blank">Check out</a></div>
                     </div>
                 </div>
             </div>

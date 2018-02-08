@@ -51,16 +51,22 @@ export const getYear = () => {
 }
 
 // Detect browsers
-export const isSupportBrowser = () => {
-    const isIE = /*@cc_on!@*/false || !!document.documentMode,
-        isEdge = !isIE && !!window.StyleMedia,
-        usAg = window.navigator.userAgent,
-        isOperaMini = (usAg.indexOf('Opera Mini') > -1),
-        isOpera = (usAg.indexOf('Opera') > -1),
-        isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
-
-    return isIE || isEdge || isOperaMini || isIOS ? (true, console.log(` *** Your browser doesnt support downloading files *** `)) : (false, console.log(` *** Your browser supports downloading files *** `));
+export const isSupportBrowser = {
+    isSupportBrowser: '',
+    checkSupportBrowser: () => {
+        console.log(this, 'this');
+        const isIE = /*@cc_on!@*/false || !!document.documentMode,
+            isEdge = !isIE && !!window.StyleMedia,
+            usAg = window.navigator.userAgent,
+            isOperaMini = (usAg.indexOf('Opera Mini') > -1),
+            isOpera = (usAg.indexOf('Opera') > -1),
+            isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
+        return isIE || isEdge || isOperaMini || isIOS
+            ? this.isSupportBrowser = true
+            : this.isSupportBrowser = false
+    }
 }
+
 
 // Preloader
 export const checkPreloader = () => {
