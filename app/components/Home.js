@@ -30,13 +30,16 @@ class Home extends Component {
         document.addEventListener('scroll', skillsLevelAnimation);
         document.removeEventListener('scroll', skillsLevelAnimation, true);
         checkPreloader();
-        browserDetect()
-            .then(res => {
-                if (res.isSupport) {
-                    this.setState({ browser: true, loading: false });
-                    getYear();
-                }
-            }).catch(e => console.log(e));
+        setTimeout(() => {
+            browserDetect()
+                .then(res => {
+                    if (res.isSupport) {
+                        this.setState({ browser: true, loading: false });
+                        getYear();
+                    }
+                })
+                .catch(e => this.setState({ browser: false, loading: false }));
+        }, 3000);
 
     }
 
@@ -83,12 +86,13 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.state.loading);
         return (
             <div className="container">
                 {
                     this.state.loading
                         ? <Preloader />
-                        : this.renderContent(this.state.browser)
+                        : this.renderContent(!this.state.browser)
                 }
             </div>
         );
