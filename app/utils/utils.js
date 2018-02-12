@@ -19,7 +19,7 @@ export function skillsLevelAnimation(e) {
 
         [...valueElement].forEach(item => {
             for (let j = 0; j <= skillValue[valueIndex]; j++) {
-                setTimeout(function () {
+                setTimeout(function() {
                     item.innerHTML = `${j}%`;
                 }, j * 33);
             }
@@ -51,22 +51,21 @@ export const getYear = () => {
 }
 
 // Detect browsers
-export const isSupportBrowser = {
-    isSupportBrowser: '',
-    checkSupportBrowser: () => {
-        console.log(this, 'this');
-        const isIE = /*@cc_on!@*/false || !!document.documentMode,
-            isEdge = !isIE && !!window.StyleMedia,
-            usAg = window.navigator.userAgent,
-            isOperaMini = (usAg.indexOf('Opera Mini') > -1),
-            isOpera = (usAg.indexOf('Opera') > -1),
-            isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
-        return isIE || isEdge || isOperaMini || isIOS
-            ? this.isSupportBrowser = true
-            : this.isSupportBrowser = false
-    }
-}
+export const browserDetect = () => {
+    const isIE = /*@cc_on!@*/false || !!document.documentMode,
+        isEdge = !isIE && !!window.StyleMedia,
+        usAg = window.navigator.userAgent,
+        isOperaMini = (usAg.indexOf('Opera Mini') > -1),
+        isOpera = (usAg.indexOf('Opera') > -1),
+        isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
 
+    const browser = !!isIE || !!isEdge || !!isOperaMini || !!isIOS;
+
+    // Refactor this
+    return new Promise((resolve, reject) => {
+        !browser ? resolve({ isSupport: !browser }) : reject({ isUnSupport: 'Unknown browser' });
+    });
+}
 
 // Preloader
 export const checkPreloader = () => {

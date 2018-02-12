@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, isSupportBrowser, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, browserDetect, API } from '../utils/utils';
+import Preloader from './Preloader';
 import Welcome from './Welcome';
 import About from './About';
 import Skills from './Skills';
@@ -16,7 +17,8 @@ class Home extends Component {
         this.state = {
             portfolioFull: 3,
             currentContact: "e-mail",
-            isSupportBrowser: null
+            loading: true,
+            browser: false
         };
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
@@ -28,6 +30,12 @@ class Home extends Component {
         document.removeEventListener('scroll', skillsLevelAnimation, true);
         getYear();
         checkPreloader();
+        browserDetect()
+            .then(res => {
+                if (res.isSupport) {
+                    this.setState({ browser: true, loading: false });
+                }
+            }).catch(e => console.log(e))
     }
 
     showMorePortfolio() {
@@ -35,44 +43,34 @@ class Home extends Component {
     }
 
     checkContact(e) {
-        this.setState({
-            currentContact: e.target.value
-        });
+        this.setState({ currentContact: e.target.value });
     }
 
     render() {
-        let isIE = /*@cc_on!@*/false || !!document.documentMode,
-            isEdge = !isIE && !!window.StyleMedia,
-            usAg = window.navigator.userAgent,
-            isOperaMini = (usAg.indexOf('Opera Mini') > -1),
-            isOpera = (usAg.indexOf('Opera') > -1),
-            isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
-debugger
-            if (isIE || isEdge || isOperaMini || isIOS) {
-             this.setState({
-                 isSupportBrowser: true,
-                 currentContact: 'fif'
-             });
-         }
-         console.log(this.state.isSupportBrowser, this.state.currentContact);
         return (
             <div className="container">
-                <Navigation scrollToElement={scrollToElement} api={API} />
-                <Welcome scrollToElement={scrollToElement} />
-                <About />
-                <Skills api={API} />
-                <Experience api={API} fullExperience={fullExperience} />
-                {!!API.portfolio.length &&
-                    <Portfolio
-                        api={API}
-                        portfolioFull={this.state.portfolioFull}
-                        showMorePortfolio={this.showMorePortfolio} />}
-                <Education api={API} />
-                <Contacts
-                    api={API}
-                    checkContact={this.checkContact}
-                    currentContact={this.state.currentContact} />
-                <Footer />
+                {
+                    this.state.loading ?
+                        <Preloader /> :
+                        <div>
+                            <Navigation scrollToElement={scrollToElement} api={API} />
+                            <Welcome scrollToElement={scrollToElement} />
+                            <About />
+                            <Skills api={API} />
+                            <Experience api={API} fullExperience={fullExperience} />
+                            {!!API.portfolio.length &&
+                                <Portfolio
+                                    api={API}
+                                    portfolioFull={this.state.portfolioFull}
+                                    showMorePortfolio={this.showMorePortfolio} />}
+                            <Education api={API} />
+                            <Contacts
+                                api={API}
+                                checkContact={this.checkContact}
+                                currentContact={this.state.currentContact} />
+                            <Footer />
+                        </div>
+                }
             </div>
         );
     }
