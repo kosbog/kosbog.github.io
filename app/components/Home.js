@@ -10,6 +10,7 @@ import Portfolio from './Portfolio';
 import Contacts from './Contacts';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import Browser from './Browser';
 
 class Home extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Home extends Component {
             portfolioFull: 3,
             currentContact: "e-mail",
             loading: true,
-            browser: false
+            browser: ''
         };
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
@@ -28,14 +29,15 @@ class Home extends Component {
     componentDidMount() {
         document.addEventListener('scroll', skillsLevelAnimation);
         document.removeEventListener('scroll', skillsLevelAnimation, true);
-        getYear();
         checkPreloader();
         browserDetect()
             .then(res => {
                 if (res.isSupport) {
                     this.setState({ browser: true, loading: false });
+                    getYear();
                 }
-            }).catch(e => console.log(e))
+            }).catch(e => console.log(e));
+
     }
 
     showMorePortfolio() {
@@ -46,30 +48,47 @@ class Home extends Component {
         this.setState({ currentContact: e.target.value });
     }
 
+    renderContent(value) {
+        return value
+            ? [<Navigation
+                key="nav"
+                scrollToElement={scrollToElement}
+                api={API} />,
+            <Welcome
+                key="welcome"
+                scrollToElement={scrollToElement} />,
+            <About key="about" />,
+            <Skills
+                key="skills"
+                api={API} />,
+            <Experience
+                key="experience"
+                api={API}
+                fullExperience={fullExperience} />,
+            <Portfolio
+                key="portfolio"
+                api={API}
+                portfolioFull={this.state.portfolioFull}
+                showMorePortfolio={this.showMorePortfolio} />,
+            <Education
+                key="education"
+                api={API} />,
+            <Contacts
+                key="contacts"
+                api={API}
+                checkContact={this.checkContact}
+                currentContact={this.state.currentContact} />,
+            <Footer key="footer" />]
+            : <Browser />
+    }
+
     render() {
         return (
             <div className="container">
                 {
-                    this.state.loading ?
-                        <Preloader /> :
-                        <div>
-                            <Navigation scrollToElement={scrollToElement} api={API} />
-                            <Welcome scrollToElement={scrollToElement} />
-                            <About />
-                            <Skills api={API} />
-                            <Experience api={API} fullExperience={fullExperience} />
-                            {!!API.portfolio.length &&
-                                <Portfolio
-                                    api={API}
-                                    portfolioFull={this.state.portfolioFull}
-                                    showMorePortfolio={this.showMorePortfolio} />}
-                            <Education api={API} />
-                            <Contacts
-                                api={API}
-                                checkContact={this.checkContact}
-                                currentContact={this.state.currentContact} />
-                            <Footer />
-                        </div>
+                    this.state.loading
+                        ? <Preloader />
+                        : this.renderContent(this.state.browser)
                 }
             </div>
         );
