@@ -35,7 +35,7 @@ class Home extends Component {
                 setTimeout(() => {
                     this.setState({ loading: false });
                     getYear();
-                }, 7000);
+                }, 11000);
             })
             .catch(e => this.setState({ loading: false }));
     }
@@ -88,12 +88,13 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                    {this.state.loading ?
-                        <Preloader /> : null}
+                {this.state.loading &&
+                    <Preloader />}
                 <div className="container">
 
                     {this.renderContent(this.state.isBadBrowser)}
                 </div>
+                {/* <Preloader/> */}
             </React.Fragment>
         );
     }
