@@ -22,6 +22,8 @@ class Home extends Component {
             browser: ''
         };
 
+        this.checkPreloader()
+
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
         this.checkContact = this.checkContact.bind(this);
     }
@@ -29,7 +31,7 @@ class Home extends Component {
     componentDidMount() {
         document.addEventListener('scroll', skillsLevelAnimation);
         document.removeEventListener('scroll', skillsLevelAnimation, true);
-        checkPreloader();
+        // checkPreloader();
         setTimeout(() => {
             browserDetect()
                 .then(res => {
@@ -39,8 +41,20 @@ class Home extends Component {
                     }
                 })
                 .catch(e => this.setState({ browser: false, loading: false }));
-        }, 3000);
+        }, 1);
 
+    }
+
+    checkPreloader() {
+        const img = new Image(),
+            localImg = document.getElementsByClassName('photo__image')[0];
+        
+        img.onload = function() {
+            console.log(this.src, 'this');
+            localImg.src = this.src;
+            return true;
+        }
+        img.src = '/app/assets/images/bg/bg21.jpg';
     }
 
     showMorePortfolio() {

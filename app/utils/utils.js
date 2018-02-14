@@ -71,11 +71,13 @@ export const browserDetect = () => {
 export const checkPreloader = () => {
     const img = new Image(),
         localImg = document.getElementsByClassName('photo__image')[0];
-    img.onload = () => {
-        console.log('image loaded');
+    
+    img.onload = function() {
+        console.log(this.src, 'this');
+        localImg.src = this.src;
+        return true;
     }
-    img.src = '../assets/images/self/self.png';
-    console.log(img);
+    img.src = '/app/assets/images/bg/bg21.jpg';
 }
 
 // Get API data
