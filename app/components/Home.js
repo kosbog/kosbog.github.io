@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { skillsLevelAnimation, scrollToElement, fullExperience, getYear, checkPreloader, browserDetect, API } from '../utils/utils';
+import ReactDOM from 'react-dom'
+import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, badBrowserDetect, API } from '../utils/utils';
 import Preloader from './Preloader';
 import Welcome from './Welcome';
 import About from './About';
@@ -19,42 +20,32 @@ class Home extends Component {
             portfolioFull: 3,
             currentContact: "e-mail",
             loading: true,
-            browser: ''
+            isBadBrowser: false
         };
-
-        this.checkPreloader()
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
         this.checkContact = this.checkContact.bind(this);
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', skillsLevelAnimation);
-        document.removeEventListener('scroll', skillsLevelAnimation, true);
-        // checkPreloader();
-        setTimeout(() => {
-            browserDetect()
-                .then(res => {
-                    if (res.isSupport) {
-                        this.setState({ browser: true, loading: false });
-                        getYear();
-                    }
-                })
-                .catch(e => this.setState({ browser: false, loading: false }));
-        }, 1);
-
+        document.addEventListener('scroll', disableScroll);
+        badBrowserDetect()
+            .then(res => {
+                this.setState({ isBadBrowser: res.unSupport });
+                setTimeout(() => {
+                    this.setState({ loading: false });
+                    getYear();
+                }, 7000);
+            })
+            .catch(e => this.setState({ loading: false }));
     }
 
-    checkPreloader() {
-        const img = new Image(),
-            localImg = document.getElementsByClassName('photo__image')[0];
-        
-        img.onload = function() {
-            console.log(this.src, 'this');
-            localImg.src = this.src;
-            return true;
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.loading !== prevState.loading) {
+            document.removeEventListener('scroll', disableScroll);
+            document.addEventListener('scroll', skillsLevelAnimation);
+            document.removeEventListener('scroll', skillsLevelAnimation, true);
         }
-        img.src = '/app/assets/images/bg/bg21.jpg';
     }
 
     showMorePortfolio() {
@@ -65,50 +56,45 @@ class Home extends Component {
         this.setState({ currentContact: e.target.value });
     }
 
-    renderContent(value) {
-        return value
-            ? [<Navigation
-                key="nav"
-                scrollToElement={scrollToElement}
-                api={API} />,
-            <Welcome
-                key="welcome"
-                scrollToElement={scrollToElement} />,
-            <About key="about" />,
-            <Skills
-                key="skills"
-                api={API} />,
-            <Experience
-                key="experience"
-                api={API}
-                fullExperience={fullExperience} />,
-            <Portfolio
-                key="portfolio"
-                api={API}
-                portfolioFull={this.state.portfolioFull}
-                showMorePortfolio={this.showMorePortfolio} />,
-            <Education
-                key="education"
-                api={API} />,
-            <Contacts
-                key="contacts"
-                api={API}
-                checkContact={this.checkContact}
-                currentContact={this.state.currentContact} />,
-            <Footer key="footer" />]
-            : <Browser />
+    renderContent(isBad) {
+        return isBad
+            ? <Browser />
+            : <React.Fragment>
+                <Navigation
+                    scrollToElement={scrollToElement}
+                    api={API} />
+                <Welcome
+                    scrollToElement={scrollToElement} />
+                <About />
+                <Skills
+                    api={API} />
+                <Experience
+                    api={API}
+                    fullExperience={fullExperience} />
+                <Portfolio
+                    api={API}
+                    portfolioFull={this.state.portfolioFull}
+                    showMorePortfolio={this.showMorePortfolio} />
+                <Education
+                    api={API} />
+                <Contacts
+                    api={API}
+                    checkContact={this.checkContact}
+                    currentContact={this.state.currentContact} />
+                <Footer />
+            </React.Fragment>;
     }
 
     render() {
-        console.log(this.state.loading);
         return (
-            <div className="container">
-                {
-                    this.state.loading
-                        ? <Preloader />
-                        : this.renderContent(!this.state.browser)
-                }
-            </div>
+            <React.Fragment>
+                    {this.state.loading ?
+                        <Preloader /> : null}
+                <div className="container">
+
+                    {this.renderContent(this.state.isBadBrowser)}
+                </div>
+            </React.Fragment>
         );
     }
 }

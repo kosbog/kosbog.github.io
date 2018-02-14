@@ -51,33 +51,31 @@ export const getYear = () => {
 }
 
 // Detect browsers
-export const browserDetect = () => {
+export const badBrowserDetect = () => {
     const isIE = /*@cc_on!@*/false || !!document.documentMode,
         isEdge = !isIE && !!window.StyleMedia,
         usAg = window.navigator.userAgent,
         isOperaMini = (usAg.indexOf('Opera Mini') > -1),
         isOpera = (usAg.indexOf('Opera') > -1),
-        isIOS = (usAg.match(/(iPod|iPhone|iPad)/));
+        isIOS = (usAg.match(/(iPod|iPhone|iPad)/)),
+        browser = {};
 
-    const browser = !!isIE || !!isEdge || !!isOperaMini || !!isIOS;
+    browser.isBad = !!isIE || !!isEdge || !!isOperaMini || !!isIOS;
 
     // Refactor this
     return new Promise((resolve, reject) => {
-        !browser ? resolve({ isSupport: !browser }) : reject({ isUnSupport: 'Unknown browser' });
+        
+        if (!browser.isBad) {
+            resolve({ unSupport: browser.isBad })
+        } else {
+            reject({ error: "Unknown browser" })
+        }
     });
 }
 
-// Preloader
-export const checkPreloader = () => {
-    const img = new Image(),
-        localImg = document.getElementsByClassName('photo__image')[0];
-    
-    img.onload = function() {
-        console.log(this.src, 'this');
-        localImg.src = this.src;
-        return true;
-    }
-    img.src = '/app/assets/images/bg/bg21.jpg';
+// Diable scroll when preloader is active
+export const disableScroll =()=> {
+    window.scrollTo( 0, 0 );
 }
 
 // Get API data
