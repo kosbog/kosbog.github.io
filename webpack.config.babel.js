@@ -32,7 +32,7 @@ const Config = {
                 })
             },
             {
-                test: /\.(jpg|jpeg|png|svg)$/,
+                test: /\.(jpg|jpeg|png|svg|gif)$/,
                 loader: 'file-loader',
                 options: {
                     name: 'app/assets/images/[name].[ext]'

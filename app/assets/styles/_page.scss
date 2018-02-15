@@ -55,6 +55,7 @@ body {
         }
     }
 }
+
 button {
     display: block;
     border: 2px solid $default-color;
@@ -164,4 +165,31 @@ button {
     &-bd {
         border: 2px solid $orange;
     }
+}
+
+.browser {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $bg1;
+    color: $green;
+    text-align: center;
+    font-size: 28px;
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        & p {
+            margin: 10px;
+        }
+    }
+}
+
+.hideMe {
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s linear;
 }

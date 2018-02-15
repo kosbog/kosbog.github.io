@@ -1,7 +1,7 @@
 .home {
     width: inherit;
     height: inherit;
-    background-image: url('../images/bg/bg2.jpg');
+    background-image: url('../images/bg/bg21.jpg');
     background-size: 100% 100%;
     &:after {
         @include after();
@@ -56,11 +56,11 @@
         }
     }
     .photo {
-        width: 35vw;
+        width: 33vw;
         position: absolute;
         right: 0;
         bottom: 0;
-        img {
+        &__image {
             width: 100%;
         }
     }

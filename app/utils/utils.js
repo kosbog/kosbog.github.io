@@ -47,7 +47,35 @@ export const getYear = () => {
     const year = new Date().getFullYear(),
         element = document.getElementsByClassName('current-year')[0];
 
-    element.innerHTML = `@ ${year}`;
+    element.innerHTML = `@${year}`;
+}
+
+// Detect browsers
+export const badBrowserDetect = () => {
+    const isIE = /*@cc_on!@*/false || !!document.documentMode,
+        isEdge = !isIE && !!window.StyleMedia,
+        usAg = window.navigator.userAgent,
+        isOperaMini = (usAg.indexOf('Opera Mini') > -1),
+        isOpera = (usAg.indexOf('Opera') > -1),
+        isIOS = (usAg.match(/(iPod|iPhone|iPad)/)),
+        browser = {};
+
+    browser.isBad = !!isIE || !!isEdge || !!isOperaMini || !!isIOS;
+
+    // Refactor this
+    return new Promise((resolve, reject) => {
+        
+        if (!browser.isBad) {
+            resolve({ unSupport: browser.isBad })
+        } else {
+            reject({ error: "Unknown browser" })
+        }
+    });
+}
+
+// Diable scroll when preloader is active
+export const disableScroll =()=> {
+    window.scrollTo( 0, 0 );
 }
 
 // Get API data
