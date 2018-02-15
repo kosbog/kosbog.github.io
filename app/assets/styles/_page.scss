@@ -55,6 +55,7 @@ body {
         }
     }
 }
+
 button {
     display: block;
     border: 2px solid $default-color;
@@ -185,4 +186,10 @@ button {
             margin: 10px;
         }
     }
+}
+
+.hideMe {
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s linear;
 }

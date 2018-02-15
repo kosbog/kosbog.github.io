@@ -28,7 +28,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', disableScroll);
+        // document.addEventListener('scroll', disableScroll);
         badBrowserDetect()
             .then(res => {
                 this.setState({ isBadBrowser: res.unSupport });
@@ -71,10 +71,10 @@ class Home extends Component {
                 <Experience
                     api={API}
                     fullExperience={fullExperience} />
-                <Portfolio
+                {/* <Portfolio
                     api={API}
                     portfolioFull={this.state.portfolioFull}
-                    showMorePortfolio={this.showMorePortfolio} />
+                    showMorePortfolio={this.showMorePortfolio} /> */}
                 <Education
                     api={API} />
                 <Contacts
@@ -88,13 +88,11 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.loading &&
-                    <Preloader />}
+                {/* {this.state.loading &&
+                    <Preloader />} */}
                 <div className="container">
-
                     {this.renderContent(this.state.isBadBrowser)}
                 </div>
-                {/* <Preloader/> */}
             </React.Fragment>
         );
     }

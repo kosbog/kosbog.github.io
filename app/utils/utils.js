@@ -47,7 +47,7 @@ export const getYear = () => {
     const year = new Date().getFullYear(),
         element = document.getElementsByClassName('current-year')[0];
 
-    element.innerHTML = `@ ${year}`;
+    element.innerHTML = `@${year}`;
 }
 
 // Detect browsers

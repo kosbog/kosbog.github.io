@@ -84,7 +84,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
         primaryContacts = contacts.filter(item => {
             return item.primary === true;
         }),
-        url = '/app/data/CV_Bogdan_Kosytskyy.pdf';
+        url = '/app/data/CV_Bogdan_Kosytskyi.pdf';
 
     return (
         <div className="contacts">
@@ -110,9 +110,9 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                     </div>
                     <div className="contacts__cv">
                         <div className="cv">
-                            <p className="cv__text">And download my CV <span className="cv__extension">(.pdf)</span></p>
-                            <a className="cv__link" href={url} download>download</a>
-                            <a className="cv__link" href={url} target="_blank">Check out</a></div>
+                            <p className="cv__text">And download my CV<span className="cv__extension">(.pdf)</span></p>
+                            <a className="cv__link" href={url} download="CV_Bogdan_Kosytskyi">Download</a>
+                        </div>
                     </div>
                 </div>
             </div>
