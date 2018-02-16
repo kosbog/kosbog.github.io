@@ -1,9 +1,14 @@
 import React from 'react';
-import self from '../assets/images/self/self2.jpg';
 
-const About = () => {
+const About = ({api}) => {
+    const { images } = api,
+        imagesItem = images.find(item => {
+            if (item.section === 'about') {
+                return item;
+            }
+        });
     return (
-        <div className="about">
+        <section className="about">
             <div className="wrapper about__wrapper">
                 <div className="about__description">
                     <h2 className="section-header">About</h2>
@@ -14,7 +19,7 @@ const About = () => {
                 </div>
                 <div className="about__description about--self">
                     <div className="about__image">
-                        <img src={self} alt="" />
+                        <img src={imagesItem.url} alt="" />
                     </div>
                     <div className="about__bio">
                         <h3>
@@ -31,7 +36,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

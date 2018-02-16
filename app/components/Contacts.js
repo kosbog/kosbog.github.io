@@ -87,7 +87,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
         url = '/app/data/CV_Bogdan_Kosytskyi.pdf';
 
     return (
-        <div className="contacts">
+        <section className="contacts">
             <div className="wrapper contacts__wrapper">
                 <div className="contacts__description">
                     <h2 className="section-header">contact</h2>
@@ -116,7 +116,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

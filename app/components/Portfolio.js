@@ -37,7 +37,7 @@ const Portfolio = ({ portfolioFull, showMorePortfolio, api }) => {
   })
   
   return (
-    <div className="portfolio">
+    <section className="portfolio">
       <div className="wrapper portfolio__wrapper">
         <div className="portfolio__description">
           <h2 className="section-header">portfolio</h2>
@@ -55,7 +55,7 @@ const Portfolio = ({ portfolioFull, showMorePortfolio, api }) => {
           <button type="button">more</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

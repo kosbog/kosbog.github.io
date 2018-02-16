@@ -9,6 +9,28 @@
     .wrapper {
         padding-left: 20px;
         padding-right: 20px;
+    } // *** Welcome
+    .home {
+        background-size: cover;
+        .greeting {
+            padding: 0 20px;
+            align-items: center;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            h1 {
+                line-height: 1em;
+                font-size: 3em;
+            }
+            p,
+            .btn {
+                color: #d0d0d0;
+            }
+        }
+        .photo {
+            display: none;
+        }
     } // *** Experience
     .experience {
         &__container {
@@ -59,28 +81,6 @@
     } // *** Navigation
     .nav {
         display: none;
-    } // *** Welcome
-    .home {
-        background-size: cover;
-        .greeting {
-            padding: 0 20px;
-            align-items: center;
-            text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 100%;
-            h1 {
-                line-height: 1em;
-                font-size: 3em;
-            }
-            p,
-            .btn {
-                color: #d0d0d0;
-            }
-        }
-        .photo {
-            display: none;
-        }
     } // *** About
     .about {
         &__description {

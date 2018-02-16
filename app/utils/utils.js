@@ -100,5 +100,8 @@ export const API = {
     },
     get contacts() {
         return data.contacts;
+    },
+    get images() {
+        return data.images;
     }
 }

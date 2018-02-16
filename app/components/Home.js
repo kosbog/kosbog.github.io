@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom'
 import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, badBrowserDetect, API } from '../utils/utils';
 import Preloader from './Preloader';
@@ -13,7 +13,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import Browser from './Browser';
 
-class Home extends Component {
+class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,7 +28,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        // document.addEventListener('scroll', disableScroll);
+        document.addEventListener('scroll', disableScroll);
         badBrowserDetect()
             .then(res => {
                 this.setState({ isBadBrowser: res.unSupport });
@@ -64,8 +64,9 @@ class Home extends Component {
                     scrollToElement={scrollToElement}
                     api={API} />
                 <Welcome
+                    api={API}
                     scrollToElement={scrollToElement} />
-                <About />
+                <About api={API} />
                 <Skills
                     api={API} />
                 <Experience
@@ -88,8 +89,8 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                {/* {this.state.loading &&
-                    <Preloader />} */}
+                {this.state.loading &&
+                    <Preloader />}
                 <div className="container">
                     {this.renderContent(this.state.isBadBrowser)}
                 </div>

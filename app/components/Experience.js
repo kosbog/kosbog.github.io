@@ -52,14 +52,14 @@ const Experience = ({ api, fullExperience }) => {
         );
     })
     return (
-        <div className="experience">
+        <section className="experience">
             <div className="wrapper experience__wrapper">
                 <h2 className="section-header">Experience</h2>
                 <div className="experience__container">
                     {experienceItems}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

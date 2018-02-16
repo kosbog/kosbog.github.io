@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const PreloaderLines = () => {
     let listAmount = 0,
@@ -24,11 +24,11 @@ const PreloaderCircle = ({ phrase }) => {
     );
 }
 
-class Preloader extends Component {
+class Preloader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            phraseArr: ['Check the connection...', 'Are you a HR manager?', 'All is okay ;)', 'Welcome!'],
+            phraseArr: ['Check your connection...', 'Check who you are...', 'Hmm, HR??', 'No? Oh... In that case...', 'It\'s a joke :)', 'Welcome.'],
             phrase: ''
         };
 
@@ -43,7 +43,7 @@ class Preloader extends Component {
                 phrase: this.state.phraseArr[counter]
             });
             counter++;
-        }, (8000 / (this.state.phraseArr.length)));
+        }, (9000 / (this.state.phraseArr.length)));
 
         this.timer = setTimeout(() => {
             clearInterval(this.phraseGenerator);

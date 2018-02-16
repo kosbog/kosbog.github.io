@@ -7,10 +7,21 @@
     "education",
     "contacts"
   ],
+  "images": [
+    {
+      "section": "about",
+      "url": "app/assets/images/self/self2.jpg"
+    },
+    {
+      "section": "welcome",
+      "url": "app/assets/images/self/self.png"
+    }
+  ],
   "about": [
     "From childhood I didn't dream about that i will sit at the computer and write a code - I wanted to become a professional football player. I even played for the school football team, yeah!.. But, my \"football career\" ended when I started studying at the university. I have a fancy for web development in the second year of study. Thereat in simple textpad I created my first HTML page and connected my first CSS file to it. It was an unforgettable feeling!"
   ],
-  "skills": [{
+  "skills": [
+    {
       "name": "javascript",
       "value": "73",
       "color": "orange",
@@ -29,9 +40,10 @@
       "description": "Using SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box / Bootstrap"
     }
   ],
-  "experience": [{
+  "experience": [
+    {
       "company": {
-        "name": "Lucky Labs",
+        "name": "***ky ***s",
         "description": "Riga, Latvia"
       },
       "time": "11.2017 - present",
@@ -50,10 +62,10 @@
       "time": "07.2016 - 10.2017",
       "position": "Front-end Developer",
       "responsibility": [
-        "Development of projects in AngularJS, their further support and improvement;",
+        "Development of projects on AngularJS, their further support and addition of new modules/features;",
         "Work with REST API;",
-        "Build with module bundles like Webpack and Gulp;",
-        "Landings development;",
+        "Build projects using Webpack or Gulp (setup/create config file);",
+        "Development of landings of different complexity (statics/adaptive/dynamic);",
         "Experience with different libraries like jQuery, Hammer.js, Velocity.js etc."
       ],
       "color": "sea"
@@ -66,20 +78,19 @@
       "time": "08.2015 - 07.2016",
       "position": "HTML-coder",
       "responsibility": [
-        "Layout of pages for different websites (clients);",
-        "Work in the admin panel (hosting, ftp): editing page design, implementation, editing texts and meta tags;",
-        "Layout of landings and their further support;",
-        "Advice for clients about the optimization website pages of code;",
-        "Work with a variety of CMS-systems (WordPress, OpenCart, Magento and others);",
-        "During the work, according to my recommendations, a new kind of product have been introduced (mini Landing) and standards for the layout of the pages, which led to an increase in demand for the product."
+        "Layout of pages for different websites;",
+        "Development of landings (+ placing on the client's website);",
+        "Work in admin panel (hosting, ftp): editing of page design, including and editing of texts and meta tags);",
+        "Advice to clients about the optimization of code;",
+        "Work with various CMS-systems (WordPress, OpenCart, Magento and others);",
+        "During the work, according to my recommendations, a new type of product was created - \"light-landing\" and standards for page layout, which led to increased demand for the product and increased sales."
       ],
       "color": "orange"
     }
   ],
-  "portfolio": [
-
-  ],
-  "education": [{
+  "portfolio": [],
+  "education": [
+    {
       "name": "National Aviation University",
       "time": "2014-2015",
       "position": "Specialist of “Administrative management in the field of information security”",
@@ -94,7 +105,8 @@
       "color": "orange"
     }
   ],
-  "contacts": [{
+  "contacts": [
+    {
       "primary": true,
       "type": "e-mail",
       "value": "badykos@gmail.com",
