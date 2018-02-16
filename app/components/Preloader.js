@@ -33,7 +33,6 @@ class Preloader extends React.Component {
         };
 
         this.phraseTimer = null;
-        this.timer = null;
     }
 
     componentDidMount() {
@@ -45,14 +44,14 @@ class Preloader extends React.Component {
             counter++;
         }, (9000 / (this.state.phraseArr.length)));
 
-        this.timer = setTimeout(() => {
+        this.phraseTimer = setTimeout(() => {
             clearInterval(this.phraseGenerator);
             document.getElementsByClassName('preloader')[0].classList.add('hideMe');
         }, 10000);
     }
 
     componentWillUnmount() {
-        window.clearTimeout(this.timer);
+        window.clearTimeout(this.phraseTimer);
     }
 
     render() {

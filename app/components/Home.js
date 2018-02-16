@@ -29,15 +29,18 @@ class Home extends React.Component {
 
     componentDidMount() {
         document.addEventListener('scroll', disableScroll);
-        badBrowserDetect()
+        let promise = badBrowserDetect();
+        promise
             .then(res => {
                 this.setState({ isBadBrowser: res.unSupport });
-                setTimeout(() => {
-                    this.setState({ loading: false });
-                    getYear();
-                }, 11000);
+                console.log(3);
             })
-            .catch(e => this.setState({ loading: false }));
+            .then(setTimeout(() => {
+                console.log(1)
+                this.setState({ loading: 'fulfilled' });
+                getYear();
+            }, 11000))
+            .catch(e =>{console.log(2); this.setState({ loading: 'fulfilled' })});
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -89,8 +92,8 @@ class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.loading &&
-                    <Preloader />}
+                {!this.state.isBadBrowser ?
+                    <Preloader /> : null}
                 <div className="container">
                     {this.renderContent(this.state.isBadBrowser)}
                 </div>
