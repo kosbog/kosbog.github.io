@@ -88,8 +88,8 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.loading &&
-                    <Preloader />}
+                {/* {this.state.loading &&
+                    <Preloader />} */}
                 <div className="container">
                     {this.renderContent(this.state.isBadBrowser)}
                 </div>
