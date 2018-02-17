@@ -1,5 +1,37 @@
 import data from '../data/data.json';
 
+// Get API data
+export const API = {
+    isBadBrowser: null,
+    get about() {
+        return data.about;
+    },
+    get menu() {
+        return data.menu;
+    },
+    get skills() {
+        return data.skills;
+    },
+    get experience() {
+        return data.experience;
+    },
+    get portfolio() {
+        return data.portfolio;
+    },
+    get education() {
+        return data.education;
+    },
+    get contacts() {
+        return data.contacts;
+    },
+    get images() {
+        return data.images;
+    },
+    set setBrowser(val) {
+        this.isBadBrowser = val;
+    }
+}
+
 // Skills level animation
 export function skillsLevelAnimation(e) {
     let parentElement = document.getElementsByClassName('skills')[0],
@@ -51,54 +83,19 @@ export const getYear = () => {
 }
 
 // Detect browsers
-export const badBrowserDetect = () => {
+const badBrowserDetect = () => {
     const isIE = /*@cc_on!@*/false || !!document.documentMode,
         isEdge = !isIE && !!window.StyleMedia,
         usAg = window.navigator.userAgent,
         isOperaMini = (usAg.indexOf('Opera Mini') > -1),
-        isOpera = (usAg.indexOf('Opera') > -1),
-        isIOS = (usAg.match(/(iPod|iPhone|iPad)/)),
-        browser = {};
+        isOpera = (usAg.indexOf('Opera') > -1);
+    // isIOS = (usAg.match(/(iPod|iPhone|iPad)/))
 
-    browser.isBad = !!isIE || !!isEdge || !!isOperaMini || !!isIOS;
-
-    // Refactor this
-    return new Promise((resolve, reject) => {
-        
-        if (!browser.isBad) {
-            resolve({ unSupport: browser.isBad })
-        } else {
-            reject({ error: "Unknown browser" })
-        }
-    });
+    return !!isIE || !!isEdge || !!isOperaMini;
 }
+API.setBrowser = badBrowserDetect();
 
 // Diable scroll when preloader is active
-export const disableScroll =()=> {
-    window.scrollTo( 0, 0 );
-}
-
-// Get API data
-export const API = {
-    get about() {
-        return data.about;
-    },
-    get menu() {
-        return data.menu;
-    },
-    get skills() {
-        return data.skills;
-    },
-    get experience() {
-        return data.experience;
-    },
-    get portfolio() {
-        return data.portfolio;
-    },
-    get education() {
-        return data.education;
-    },
-    get contacts() {
-        return data.contacts;
-    }
+export const disableScroll = () => {
+    window.scrollTo(0, 0);
 }

@@ -36,14 +36,14 @@ const Education = ({ api }) => {
     );
   })
   return (
-    <div className="education">
+    <section className="education">
       <div className="wrapper education__wrapper">
         <h2 className="section-header">education</h2>
         <div className="education__container">
           {educationItems}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

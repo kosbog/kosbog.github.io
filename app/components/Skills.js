@@ -24,14 +24,14 @@ const Skills = ({ api }) => {
         )
     })
     return (
-        <div className="skills">
+        <section className="skills">
             <div className="wrapper skills__wrapper">
                 <h2 className="section-header">Skills</h2>
                 <div className="skills__container">
                     {skillsItems}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

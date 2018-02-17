@@ -15,14 +15,6 @@
         height: inherit;
         z-index: 1;
     }
-    header {
-        width: 100%;
-        @include flex(row,
-        nowrap,
-        space-around,
-        center);
-    }
-    
     .greeting {
         @include flex(column,
         nowrap,

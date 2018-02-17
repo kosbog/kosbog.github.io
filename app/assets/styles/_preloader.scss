@@ -9,7 +9,7 @@
     z-index: 99;
     overflow: hidden;
     &__phrase {
-        width: 50%;
+        width: 70%;
         height: 35px;
         color: $orange;
         text-align: center;
@@ -19,7 +19,7 @@
     }
     &__loader {
         width: 260px;
-        height: 150px;
+        height: 180px;
         &--circle {
             left: 50%;
             margin-left: -35px;

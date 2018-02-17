@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, badBrowserDetect, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, API } from '../utils/utils';
 import Preloader from './Preloader';
 import Welcome from './Welcome';
 import About from './About';
@@ -19,25 +19,21 @@ class Home extends React.Component {
         this.state = {
             portfolioFull: 3,
             currentContact: "e-mail",
-            loading: true,
-            isBadBrowser: false
+            loading: 'pending',
+            isBadBrowser: API.isBadBrowser
         };
+
+        document.addEventListener('scroll', disableScroll);        
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
         this.checkContact = this.checkContact.bind(this);
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', disableScroll);
-        badBrowserDetect()
-            .then(res => {
-                this.setState({ isBadBrowser: res.unSupport });
-                setTimeout(() => {
-                    this.setState({ loading: false });
-                    getYear();
-                }, 11000);
-            })
-            .catch(e => this.setState({ loading: false }));
+        setTimeout(() => {
+            this.setState({ loading: 'fulfilled' });
+            getYear();
+        }, 11000);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -56,16 +52,16 @@ class Home extends React.Component {
         this.setState({ currentContact: e.target.value });
     }
 
-    renderContent(isBad) {
-        return isBad
-            ? <Browser />
-            : <React.Fragment>
+    renderContent() {
+        return (
+            <React.Fragment>
                 <Navigation
                     scrollToElement={scrollToElement}
                     api={API} />
                 <Welcome
+                    api={API}
                     scrollToElement={scrollToElement} />
-                <About />
+                <About api={API} />
                 <Skills
                     api={API} />
                 <Experience
@@ -82,17 +78,22 @@ class Home extends React.Component {
                     checkContact={this.checkContact}
                     currentContact={this.state.currentContact} />
                 <Footer />
-            </React.Fragment>;
+            </React.Fragment>
+        )
     }
 
     render() {
         return (
             <React.Fragment>
-                {this.state.loading &&
-                    <Preloader />}
-                <div className="container">
-                    {this.renderContent(this.state.isBadBrowser)}
-                </div>
+                {this.state.isBadBrowser
+                    ? <Browser />
+                    : <React.Fragment>
+                        {this.state.loading === 'pending' &&
+                            <Preloader />}
+                        <div className="container">
+                            {this.renderContent()}
+                        </div>
+                    </React.Fragment>}
             </React.Fragment>
         );
     }

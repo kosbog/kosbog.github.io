@@ -1,5 +1,4 @@
 import React from 'react';
-import photo from '../assets/images/self/self.png';
 
 const Greeting = ({ scrollToElement }) => {
     return (
@@ -14,22 +13,29 @@ const Greeting = ({ scrollToElement }) => {
     )
 }
 
-const Photo = () => {
+const Photo = ({img}) => {
     return (
         <div className="photo">
-            <img src={photo} alt="I am" className="photo__image" />
+            <img src={img.url} alt="I am" className="photo__image" />
         </div>
     )
 }
 
-const Welcome = ({ scrollToElement }) => {
+const Welcome = ({ api, scrollToElement }) => {
+    const { images } = api,
+        imagesItem = images.find(item => {
+            if (item.section === 'welcome') {
+                return item;
+            }
+        });
+
     return (
-        <div className="home">
-            <div className="wrapper home__wrapper">
+        <section className="home">
+            <header className="wrapper home__wrapper">
                 <Greeting scrollToElement={scrollToElement} />
-                <Photo />
-            </div>
-        </div>
+                <Photo img={imagesItem} />
+            </header>
+        </section>
     )
 }
 
