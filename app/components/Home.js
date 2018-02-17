@@ -23,13 +23,13 @@ class Home extends React.Component {
             isBadBrowser: API.isBadBrowser
         };
 
+        document.addEventListener('scroll', disableScroll);        
+
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
         this.checkContact = this.checkContact.bind(this);
     }
 
     componentDidMount() {
-        console.log(this.state.isBadBrowser);
-        document.addEventListener('scroll', disableScroll);
         setTimeout(() => {
             this.setState({ loading: 'fulfilled' });
             getYear();
