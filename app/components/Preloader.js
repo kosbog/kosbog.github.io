@@ -28,7 +28,6 @@ class Preloader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            phraseArr: ['Check your connection...', 'Check who you are...', 'Hmm, HR??', 'No? Oh... In that case...', 'It\'s a joke :)', 'Welcome.'],
             phrase: ''
         };
 
@@ -37,21 +36,15 @@ class Preloader extends React.Component {
 
     componentDidMount() {
         let counter = 0;
-        this.phraseGenerator = setInterval(() => {
+        this.phraseGenerator = setTimeout(() => {
             this.setState({
-                phrase: this.state.phraseArr[counter]
+                phrase: 'Loading...'
             });
-            counter++;
-        }, (9000 / (this.state.phraseArr.length)));
-
-        this.phraseTimer = setTimeout(() => {
-            clearInterval(this.phraseGenerator);
-            document.getElementsByClassName('preloader')[0].classList.add('hideMe');
-        }, 10000);
+        }, 500);
     }
 
     componentWillUnmount() {
-        window.clearTimeout(this.phraseTimer);
+        window.clearTimeout(this.phraseGenerator);
     }
 
     render() {

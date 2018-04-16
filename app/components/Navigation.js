@@ -2,9 +2,7 @@ import React from 'react';
 
 const Navigation = ({ scrollToElement, api }) => {
     const { menu } = api;
-    let menuItems = [
-        <a className="nav__item" onClick={() => scrollToElement('home')} key='home'><p>home</p></a>
-    ];
+    let menuItems = [];
     
     menu.forEach(item => {
         if (item !== 'home' && api[item].length) {

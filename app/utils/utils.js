@@ -39,26 +39,25 @@ export function skillsLevelAnimation(e) {
         valueElement = document.getElementsByClassName('skills__value'),
         parentElementYOffset = parentElement.getBoundingClientRect().top,
         windowYOffset = window.scrollY,
-        skillValue = [71, 91, 87];
-
-    if (windowYOffset > parentElementYOffset) {
-        var valueIndex = 0, skillIndex = 0;
-
-        [...skillElement].forEach(item => {
-            item.style.width = `${skillValue[skillIndex] - 7}%`;
-            skillIndex += 1;
+        skillValue = API.skills.map((item, index) => {
+            return item.value;
         });
 
-        [...valueElement].forEach(item => {
-            for (let j = 0; j <= skillValue[valueIndex]; j++) {
-                setTimeout(function() {
-                    item.innerHTML = `${j}%`;
-                }, j * 33);
-            }
-            valueIndex += 1;
-        });
-        document.removeEventListener('scroll', skillsLevelAnimation);
-    }
+    var valueIndex = 0, skillIndex = 0;
+
+    [...skillElement].forEach(item => {
+        item.style.width = `${skillValue[skillIndex] - 7}%`;
+        skillIndex += 1;
+    });
+
+    [...valueElement].forEach(item => {
+        for (let j = 0; j <= skillValue[valueIndex]; j++) {
+            setTimeout(function () {
+                item.innerHTML = `${j}%`;
+            }, j * 33);
+        }
+        valueIndex += 1;
+    });
 }
 
 // Show full experience information
@@ -82,6 +81,7 @@ export const getYear = () => {
     element.innerHTML = `@${year}`;
 }
 
+
 // Detect browsers
 const badBrowserDetect = () => {
     const isIE = /*@cc_on!@*/false || !!document.documentMode,
@@ -89,7 +89,6 @@ const badBrowserDetect = () => {
         usAg = window.navigator.userAgent,
         isOperaMini = (usAg.indexOf('Opera Mini') > -1),
         isOpera = (usAg.indexOf('Opera') > -1);
-    // isIOS = (usAg.match(/(iPod|iPhone|iPad)/))
 
     return !!isIE || !!isEdge || !!isOperaMini;
 }
@@ -99,3 +98,17 @@ API.setBrowser = badBrowserDetect();
 export const disableScroll = () => {
     window.scrollTo(0, 0);
 }
+
+// Detect device
+export const deviceDetect = () => {
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    //     console.log('is mobile');
+    //    }
+    if (window.navigator.userAgent.match(/mobile/i)) {
+        console.log('Mobile');
+    } else if (window.navigator.userAgent.match(/iPad|Android|Touch/i)) {
+        console.log('Tablet');
+    } else {
+        console.log('Desktop');
+    }
+};

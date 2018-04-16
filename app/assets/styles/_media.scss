@@ -78,10 +78,12 @@
     //  *** Common
     .ml-90 {
         margin-left: 0;
-    } // *** Navigation
+    }
+    // *** Navigation
     .nav {
-        display: none;
-    } // *** About
+        
+    }
+    // *** About
     .about {
         &__description {
             &.about--self {

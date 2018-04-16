@@ -84,7 +84,7 @@ const Contacts = ({ api, checkContact, currentContact }) => {
         primaryContacts = contacts.filter(item => {
             return item.primary === true;
         }),
-        url = '/app/data/CV_Bogdan_Kosytskyi.pdf';
+        url = '/app/data/CV_Bohdan_Kosytskyi.pdf';
 
     return (
         <section className="contacts">
