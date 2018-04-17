@@ -1,6 +1,5 @@
-import data from '../data/data.json';
-
 // Get API data
+import data from '../data/data.json';
 export const API = {
     isBadBrowser: null,
     get about() {
@@ -27,8 +26,8 @@ export const API = {
     get images() {
         return data.images;
     },
-    set setBrowser(val) {
-        this.isBadBrowser = val;
+    get browser() {
+         return badBrowserDetect();
     }
 }
 
@@ -91,7 +90,6 @@ const badBrowserDetect = () => {
 
     return !!isIE || !!isEdge || !!isOperaMini;
 }
-API.setBrowser = badBrowserDetect();
 
 // Diable scroll when preloader is active
 export const disableScroll = () => {

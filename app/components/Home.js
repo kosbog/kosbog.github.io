@@ -20,23 +20,33 @@ class Home extends React.Component {
             portfolioFull: 3,
             currentContact: "e-mail",
             loading: 'pending',
-            isBadBrowser: API.isBadBrowser
+            isBadBrowser: API.browser
         };
 
-        document.addEventListener('scroll', disableScroll); 
+        document.addEventListener('scroll', disableScroll);
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
         this.checkContact = this.checkContact.bind(this);
+        this.initSetupApp = this.initSetupApp.bind(this);
     }
 
     componentDidMount() {
-        getYear();
         window.onload = () => {
-            this.setState({ loading: 'fulfilled' });
-            document.removeEventListener('scroll', disableScroll);
             document.getElementsByClassName('preloader')[0].classList.add('hideMe');
-            skillsLevelAnimation();
+            if (!this.state.isBadBrowser) {
+                this.initSetupApp();
+            } else {
+                this.setState({ loading: 'error' });
+            }
         }
+    }
+
+    initSetupApp() {
+        this.setState({ loading: 'fulfilled' });
+        document.removeEventListener('scroll', disableScroll);
+        // document.getElementsByClassName('preloader')[0].classList.add('hideMe');
+        skillsLevelAnimation();
+        getYear();
     }
 
     showMorePortfolio() {
@@ -81,7 +91,10 @@ class Home extends React.Component {
         return (
             <React.Fragment>
                 {this.state.isBadBrowser
-                    ? <Browser />
+                    ? <React.Fragment>
+                        <Browser />
+                        <Preloader />
+                    </React.Fragment>
                     : <React.Fragment>
                         <Preloader />
                         <div className="container">

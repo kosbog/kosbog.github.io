@@ -40,7 +40,7 @@ class Preloader extends React.Component {
             this.setState({
                 phrase: 'Loading...'
             });
-        }, 500);
+        }, 300);
     }
 
     componentWillUnmount() {
