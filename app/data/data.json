@@ -1,6 +1,5 @@
 {
   "menu": [
-    "home",
     "about",
     "experience",
     "portfolio",
@@ -27,7 +26,7 @@
   "skills": [
     {
       "name": "javascript",
-      "value": "78",
+      "value": "75",
       "color": "orange",
       "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Using bundles like Webpack, Gulp / Working with Firebase "
     },
@@ -131,7 +130,7 @@
     {
       "primary": true,
       "type": "linkedin",
-      "value": "Bogdan Kosytskyy",
+      "value": "Bohdan Kosytskyi",
       "url": "//www.linkedin.com/in/bogdan-kosytskyy/"
     },
     {

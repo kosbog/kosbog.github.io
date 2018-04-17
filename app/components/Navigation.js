@@ -10,7 +10,7 @@ const Navigation = ({ scrollToElement, api }) => {
     let menuItems = [];    
 
     menu.forEach(item => {
-        if (item !== 'home' && api[item].length) {
+        if (api[item].length) {
             menuItems.push(<a className="nav__item" onClick={() => scrollToElement(item)} key={item}><p>{item}</p></a>)
         }
     });
@@ -19,7 +19,7 @@ const Navigation = ({ scrollToElement, api }) => {
         <nav className="nav">
             <div className="nav__container">
                 <div className="nav__logo">
-                    <img src={logo.url} alt=""/>
+                    <img onClick={() => scrollToElement('about')} src={logo.url} alt=""/>
                 </div>
                 <div className="nav__menu">
                     {menuItems}
