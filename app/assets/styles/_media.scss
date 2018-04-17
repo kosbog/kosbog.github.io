@@ -80,7 +80,19 @@
         margin-left: 0;
     } // *** Navigation
     .nav {
-        display: none;
+        &__container {
+            justify-content: center;
+        }
+        &__logo {
+            justify-content: center;
+            img {
+                width: 85%;
+                max-width: 82px;
+            }
+        }
+        &__menu {
+            display: none;
+        }
     } // *** About
     .about {
         &__description {

@@ -15,6 +15,10 @@
     {
       "section": "welcome",
       "url": "app/assets/images/self/self.png"
+    },
+    {
+      "section": "logo",
+      "url": "app/assets/images/self/logo.png"
     }
   ],
   "about": [
@@ -23,19 +27,19 @@
   "skills": [
     {
       "name": "javascript",
-      "value": "73",
+      "value": "78",
       "color": "orange",
       "description": "Experience in AngularJS, React, ReactNative, Redux, MobX / Using bundles like Webpack, Gulp / Working with Firebase "
     },
     {
       "name": "html",
-      "value": "86",
+      "value": "92",
       "color": "yellow",
       "description": "HTML5 / Correct document structure / Writing a semantic layout / Using tags like <article>, <main>, <section>, <figure> etc."
     },
     {
       "name": "css",
-      "value": "82",
+      "value": "84",
       "color": "sea",
       "description": "Using SASS,LESS / Practise in BEM methodology / In friendship with transformation and animation / Love flex-box / Bootstrap"
     }
@@ -115,7 +119,7 @@
     {
       "primary": true,
       "type": "phone",
-      "value": "+38-063-644-54-55",
+      "value": "+37127129290",
       "url": null
     },
     {

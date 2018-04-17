@@ -79,7 +79,7 @@
         border-left: none;
         border-right: none;
         cursor: pointer;
-        &:before {
+        &:before, &:after {
             @include after();
             left: 50%;
             top: -10px;
@@ -87,18 +87,37 @@
             width: 20px;
             height: 20px;
             background-color: $bg2;
+            z-index: 1;
         }
-        &.sea-bd:before {
+        &:after {
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            animation: impulse 2s linear infinite;            
+        }
+        &.sea-bd:before, &.sea-bd:after {
             border-top: 2px solid $sea;
             border-right: 2px solid $sea;
         }
-        &.green-bd:before {
+        &.green-bd:before, &.green-bd:after {
             border-top: 2px solid $green;
             border-right: 2px solid $green;
         }
-        &.orange-bd:before {
+        &.orange-bd:before, &.orange-bd:after {
             border-top: 2px solid $orange;
             border-right: 2px solid $orange;
         }
+    }
+}
+
+@keyframes impulse {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
     }
 }

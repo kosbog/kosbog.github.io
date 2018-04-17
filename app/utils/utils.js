@@ -39,26 +39,25 @@ export function skillsLevelAnimation(e) {
         valueElement = document.getElementsByClassName('skills__value'),
         parentElementYOffset = parentElement.getBoundingClientRect().top,
         windowYOffset = window.scrollY,
-        skillValue = [71, 91, 87];
-
-    if (windowYOffset > parentElementYOffset) {
-        var valueIndex = 0, skillIndex = 0;
-
-        [...skillElement].forEach(item => {
-            item.style.width = `${skillValue[skillIndex] - 7}%`;
-            skillIndex += 1;
+        skillValue = API.skills.map((item, index) => {
+            return item.value;
         });
 
-        [...valueElement].forEach(item => {
-            for (let j = 0; j <= skillValue[valueIndex]; j++) {
-                setTimeout(function() {
-                    item.innerHTML = `${j}%`;
-                }, j * 33);
-            }
-            valueIndex += 1;
-        });
-        document.removeEventListener('scroll', skillsLevelAnimation);
-    }
+    var valueIndex = 0, skillIndex = 0;
+
+    [...skillElement].forEach(item => {
+        item.style.width = `${skillValue[skillIndex] - 7}%`;
+        skillIndex += 1;
+    });
+
+    [...valueElement].forEach(item => {
+        for (let j = 0; j <= skillValue[valueIndex]; j++) {
+            setTimeout(function () {
+                item.innerHTML = `${j}%`;
+            }, j * 33);
+        }
+        valueIndex += 1;
+    });
 }
 
 // Show full experience information
@@ -89,7 +88,6 @@ const badBrowserDetect = () => {
         usAg = window.navigator.userAgent,
         isOperaMini = (usAg.indexOf('Opera Mini') > -1),
         isOpera = (usAg.indexOf('Opera') > -1);
-    // isIOS = (usAg.match(/(iPod|iPhone|iPad)/))
 
     return !!isIE || !!isEdge || !!isOperaMini;
 }
@@ -99,3 +97,4 @@ API.setBrowser = badBrowserDetect();
 export const disableScroll = () => {
     window.scrollTo(0, 0);
 }
+

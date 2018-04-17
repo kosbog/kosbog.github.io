@@ -1,11 +1,14 @@
 import React from 'react';
 
 const Navigation = ({ scrollToElement, api }) => {
-    const { menu } = api;
-    let menuItems = [
-        <a className="nav__item" onClick={() => scrollToElement('home')} key='home'><p>home</p></a>
-    ];
-    
+    const { menu, images } = api;
+    const logo = images.find(item => {
+        if (item.section === 'logo') {
+            return item;
+        }
+    });
+    let menuItems = [];    
+
     menu.forEach(item => {
         if (item !== 'home' && api[item].length) {
             menuItems.push(<a className="nav__item" onClick={() => scrollToElement(item)} key={item}><p>{item}</p></a>)
@@ -15,7 +18,12 @@ const Navigation = ({ scrollToElement, api }) => {
     return (
         <nav className="nav">
             <div className="nav__container">
-                {menuItems}
+                <div className="nav__logo">
+                    <img src={logo.url} alt=""/>
+                </div>
+                <div className="nav__menu">
+                    {menuItems}
+                </div>
             </div>
         </nav>
     );

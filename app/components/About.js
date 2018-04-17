@@ -12,10 +12,6 @@ const About = ({api}) => {
             <div className="wrapper about__wrapper">
                 <div className="about__description">
                     <h2 className="section-header">About</h2>
-                    {/* <p className="ml-90">
-                        I have been working as a front-end developer since 2015.
-                        During this time I got experience working with such frameworks as Backbone.js, AngularJS 1.x/2, React and React Native.
-                    </p> */}
                 </div>
                 <div className="about__description about--self">
                     <div className="about__image">
@@ -23,7 +19,7 @@ const About = ({api}) => {
                     </div>
                     <div className="about__bio">
                         <h3>
-                            Hello everyone, I'm <span>Bogdan Kosytskyi</span>
+                            Hello everyone, I'm <span>Bohdan Kosytskyi</span>
                             <br />
                             front-end developer
                         </h3>
