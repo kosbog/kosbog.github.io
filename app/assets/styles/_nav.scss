@@ -13,8 +13,20 @@
         font-size: $primary-size;
         color: $main-color;
         text-transform: uppercase;
-        padding: 23px 0 23px;
+        padding: 10px 0 10px;
         @include flex(row, nowrap, flex-end, center);
+    }
+    &__logo, &__menu {
+        @include flex(row, nowrap, flex-end, center);
+        width: 70%;
+    }
+    &__logo {
+        width: 30%;
+        padding: 0 20px;
+        justify-content: flex-start;
+        img {
+            width: 19%;
+        }
     }
     &__item {
         display: block;
@@ -51,3 +63,4 @@
         box-shadow: inset 0 0 5px 14px #000;
     }
 }
+

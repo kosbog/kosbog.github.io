@@ -78,12 +78,22 @@
     //  *** Common
     .ml-90 {
         margin-left: 0;
-    }
-    // *** Navigation
+    } // *** Navigation
     .nav {
-        
-    }
-    // *** About
+        &__container {
+            justify-content: center;
+        }
+        &__logo {
+            justify-content: center;
+            img {
+                width: 85%;
+                max-width: 82px;
+            }
+        }
+        &__menu {
+            display: none;
+        }
+    } // *** About
     .about {
         &__description {
             &.about--self {

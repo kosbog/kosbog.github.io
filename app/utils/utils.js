@@ -81,7 +81,6 @@ export const getYear = () => {
     element.innerHTML = `@${year}`;
 }
 
-
 // Detect browsers
 const badBrowserDetect = () => {
     const isIE = /*@cc_on!@*/false || !!document.documentMode,
@@ -99,16 +98,3 @@ export const disableScroll = () => {
     window.scrollTo(0, 0);
 }
 
-// Detect device
-export const deviceDetect = () => {
-    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    //     console.log('is mobile');
-    //    }
-    if (window.navigator.userAgent.match(/mobile/i)) {
-        console.log('Mobile');
-    } else if (window.navigator.userAgent.match(/iPad|Android|Touch/i)) {
-        console.log('Tablet');
-    } else {
-        console.log('Desktop');
-    }
-};

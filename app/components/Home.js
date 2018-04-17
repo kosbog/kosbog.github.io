@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { skillsLevelAnimation, scrollToElement, deviceDetect, disableScroll, fullExperience, getYear, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, API } from '../utils/utils';
 import Preloader from './Preloader';
 import Welcome from './Welcome';
 import About from './About';
@@ -23,7 +23,6 @@ class Home extends React.Component {
             isBadBrowser: API.isBadBrowser
         };
 
-        deviceDetect();
         document.addEventListener('scroll', disableScroll); 
 
         this.showMorePortfolio = this.showMorePortfolio.bind(this);
@@ -31,8 +30,6 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        
-        console.log(API.setBrowser, 'API.setBrowser');
         getYear();
         window.onload = () => {
             this.setState({ loading: 'fulfilled' });
