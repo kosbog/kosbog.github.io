@@ -44,7 +44,6 @@ class Home extends React.Component {
     initSetupApp() {
         this.setState({ loading: 'fulfilled' });
         document.removeEventListener('scroll', disableScroll);
-        // document.getElementsByClassName('preloader')[0].classList.add('hideMe');
         skillsLevelAnimation();
         getYear();
     }
