@@ -27,7 +27,7 @@ export const API = {
         return data.images;
     },
     get browser() {
-         return badBrowserDetect();
+        return badBrowserDetect();
     }
 }
 
@@ -96,3 +96,17 @@ export const disableScroll = () => {
     window.scrollTo(0, 0);
 }
 
+// Progress bar value animation
+export const progressBarAnimate = () => {
+    const PROGRESS = document.getElementsByTagName('progress')[0];
+    const EXCLUDE = document.getElementsByTagName('nav')[0].clientHeight;
+    const childs = document.getElementsByClassName('container')[0].children;
+
+    let totalDocumentHeight = Array.from(childs)
+        .map(item => item.clientHeight)
+        .reduce((prev, curr) => prev + curr);
+
+    let progressValue = (window.scrollY / (totalDocumentHeight - window.innerHeight - EXCLUDE)) * 100;
+
+    PROGRESS.setAttribute('value', progressValue);
+}

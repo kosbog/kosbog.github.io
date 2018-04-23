@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, API } from '../utils/utils';
+import { skillsLevelAnimation, scrollToElement, disableScroll, fullExperience, getYear, progressBarAnimate, API } from '../utils/utils';
 import Preloader from './Preloader';
 import Welcome from './Welcome';
 import About from './About';
@@ -12,6 +12,7 @@ import Contacts from './Contacts';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Browser from './Browser';
+import ProgressBar from './ProgressBar';
 
 class Home extends React.Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         window.onload = () => {
+            document.addEventListener('scroll', progressBarAnimate);
             document.getElementsByClassName('preloader')[0].classList.add('hideMe');
             if (!this.state.isBadBrowser) {
                 this.initSetupApp();
@@ -41,10 +43,13 @@ class Home extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('scroll', progressBarAnimate);
+    }
+
     initSetupApp() {
         this.setState({ loading: 'fulfilled' });
         document.removeEventListener('scroll', disableScroll);
-        // document.getElementsByClassName('preloader')[0].classList.add('hideMe');
         skillsLevelAnimation();
         getYear();
     }
@@ -90,6 +95,7 @@ class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <ProgressBar />
                 {this.state.isBadBrowser
                     ? <React.Fragment>
                         <Browser />
