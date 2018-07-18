@@ -46,10 +46,24 @@
   "experience": [
     {
       "company": {
-        "name": "***ky ***s",
+        "name": "PMG Projektraum",
+        "description": "Kyiv, Ukraine"
+      },
+      "time": "05.2018 - present",
+      "position": "Front-end Developer",
+      "responsibility": [
+        "Work with React, TypeScript, Webpack;",
+        "Create new modules (dashboard, communications (emails),  admin apnel etc.);",
+        "State Management with MobX"
+      ],
+      "color": "yellow"
+    },
+    {
+      "company": {
+        "name": "Lucky Labs",
         "description": "Riga, Latvia"
       },
-      "time": "11.2017 - present",
+      "time": "11.2017 - 05.2018",
       "position": "Front-end Developer",
       "responsibility": [
         "Application development with React Native (Android, iOS);",
@@ -60,7 +74,7 @@
     {
       "company": {
         "name": "Private Dev",
-        "description": "Kiev, Ukraine"
+        "description": "Kyiv, Ukraine"
       },
       "time": "07.2016 - 10.2017",
       "position": "Front-end Developer",
@@ -76,7 +90,7 @@
     {
       "company": {
         "name": "PROMO.UA",
-        "description": "Kiev, Ukraine"
+        "description": "Kyiv, Ukraine"
       },
       "time": "08.2015 - 07.2016",
       "position": "HTML-coder",
@@ -97,14 +111,14 @@
       "name": "National Aviation University",
       "time": "2014-2015",
       "position": "Specialist of “Administrative management in the field of information security”",
-      "location": "Kiev, Ukraine",
+      "location": "Kyiv, Ukraine",
       "color": "yellow"
     },
     {
       "name": "National Aviation University",
       "time": "2010-2014",
       "position": "Bachelor of “Management of information security”",
-      "location": "Kiev, Ukraine",
+      "location": "Kyiv, Ukraine",
       "color": "orange"
     }
   ],
@@ -142,7 +156,7 @@
     {
       "primary": false,
       "type": "location",
-      "value": "Ukraine, Kiev",
+      "value": "Ukraine, Kyiv",
       "url": null
     }
   ]
