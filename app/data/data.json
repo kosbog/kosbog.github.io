@@ -46,21 +46,35 @@
   "experience": [
     {
       "company": {
-        "name": "***ky ***s",
+        "name": "PMG Projektraum",
+        "description": "Kyiv, Ukraine"
+      },
+      "time": "05.2018 - present",
+      "position": "Front-end Developer",
+      "responsibility": [
+        "Work with React, TypeScript, Webpack;",
+        "Create new modules (dashboard, communications (emails),  admin apnel etc.);",
+        "State Management with MobX"
+      ],
+      "color": "yellow"
+    },
+    {
+      "company": {
+        "name": "Lucky Labs",
         "description": "Riga, Latvia"
       },
-      "time": "11.2017 - present",
+      "time": "11.2017 - 05.2018",
       "position": "Front-end Developer",
       "responsibility": [
         "Application development with React Native (Android, iOS);",
         "State Management with MobX"
       ],
-      "color": "green"
+      "color": "sea"
     },
     {
       "company": {
         "name": "Private Dev",
-        "description": "Kiev, Ukraine"
+        "description": "Kyiv, Ukraine"
       },
       "time": "07.2016 - 10.2017",
       "position": "Front-end Developer",
@@ -71,12 +85,12 @@
         "Development of landings of different complexity (statics/adaptive/dynamic);",
         "Experience with different libraries like jQuery, Hammer.js, Velocity.js etc."
       ],
-      "color": "sea"
+      "color": "orange"
     },
     {
       "company": {
         "name": "PROMO.UA",
-        "description": "Kiev, Ukraine"
+        "description": "Kyiv, Ukraine"
       },
       "time": "08.2015 - 07.2016",
       "position": "HTML-coder",
@@ -88,7 +102,7 @@
         "Work with various CMS-systems (WordPress, OpenCart, Magento and others);",
         "During the work, according to my recommendations, a new type of product was created - \"light-landing\" and standards for page layout, which led to increased demand for the product and increased sales."
       ],
-      "color": "orange"
+      "color": "green"
     }
   ],
   "portfolio": [],
@@ -97,14 +111,14 @@
       "name": "National Aviation University",
       "time": "2014-2015",
       "position": "Specialist of “Administrative management in the field of information security”",
-      "location": "Kiev, Ukraine",
+      "location": "Kyiv, Ukraine",
       "color": "yellow"
     },
     {
       "name": "National Aviation University",
       "time": "2010-2014",
       "position": "Bachelor of “Management of information security”",
-      "location": "Kiev, Ukraine",
+      "location": "Kyiv, Ukraine",
       "color": "orange"
     }
   ],
@@ -118,7 +132,7 @@
     {
       "primary": true,
       "type": "phone",
-      "value": "+37127129290",
+      "value": "+380636445455",
       "url": null
     },
     {
@@ -142,7 +156,7 @@
     {
       "primary": false,
       "type": "location",
-      "value": "Ukraine, Kiev",
+      "value": "Ukraine, Kyiv",
       "url": null
     }
   ]
