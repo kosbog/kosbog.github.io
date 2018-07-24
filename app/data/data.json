@@ -69,7 +69,7 @@
         "Application development with React Native (Android, iOS);",
         "State Management with MobX"
       ],
-      "color": "green"
+      "color": "sea"
     },
     {
       "company": {
@@ -85,7 +85,7 @@
         "Development of landings of different complexity (statics/adaptive/dynamic);",
         "Experience with different libraries like jQuery, Hammer.js, Velocity.js etc."
       ],
-      "color": "sea"
+      "color": "orange"
     },
     {
       "company": {
@@ -102,7 +102,7 @@
         "Work with various CMS-systems (WordPress, OpenCart, Magento and others);",
         "During the work, according to my recommendations, a new type of product was created - \"light-landing\" and standards for page layout, which led to increased demand for the product and increased sales."
       ],
-      "color": "orange"
+      "color": "green"
     }
   ],
   "portfolio": [],
@@ -132,7 +132,7 @@
     {
       "primary": true,
       "type": "phone",
-      "value": "+37127129290",
+      "value": "+380636445455",
       "url": null
     },
     {
