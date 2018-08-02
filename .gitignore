@@ -1,0 +1,6 @@
+
+node_modules
+*.lock
+*.log
+app/.DS_Store
+.vs_code
