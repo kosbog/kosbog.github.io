@@ -1,2 +1,0 @@
-# kosbog.github.io
-CV
