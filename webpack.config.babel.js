@@ -57,7 +57,6 @@ const Config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Example',
       template: './app/index.html',
       minify: {
         collapseWhitespace: true
