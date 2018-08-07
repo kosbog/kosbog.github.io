@@ -35,6 +35,7 @@ const Config = {
         test: /\.(jpg|jpeg|png|svg|gif)$/,
         loader: 'file-loader',
         options: {
+          useRelativePath: process.env.NODE_ENV === 'prod',
           name:'[name].[ext]',
           outputPath: 'assets/images/'
         }
