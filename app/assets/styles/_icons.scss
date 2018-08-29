@@ -1,0 +1,29 @@
+.icon {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    &-location {
+        background-image: url('../images/icons/location.png');
+    }
+    &-e-mail {
+        background-image: url('../images/icons/mail.png');
+    }
+    &-phone {
+      background-image: url('../images/icons/phone.png');
+    }
+    &-viber {
+      background-image: url('../images/icons/viber.png');
+    }
+    &-telegram {
+      background-image: url('../images/icons/telegram.png');
+    }
+    &-skype {
+      background-image: url('../images/icons/skype.png');
+    }
+    &-github {
+      background-image: url('../images/icons/github.png');
+    }
+    &-linkedin {
+      background-image: url('../images/icons/linkedin.png');
+    }
+}
