@@ -2,21 +2,26 @@
   background-color: $bg2;
   color: $main-color;
   padding-top: 70px;
+
   span {
     display: block;
   }
+
   &__container {
     @include flex(row, wrap, space-between, flex-start);
     padding-bottom: 90px;
   }
+
   &__item {
     @include flex(row, wrap, space-between, center);
     width: calc(100% / 2.05);
     padding: 50px 0 0;
   }
+
   &__position {
     @include flex(row, nowrap, flex-start, center);
     width: 60%;
+
     &:before {
       @include after();
       position: relative;
@@ -26,10 +31,12 @@
       height: 40px;
     }
   }
+
   &__company {
     @include flex(column, nowrap, space-between, flex-start);
     width: 40%;
   }
+
   .position {
     &__item {
       @include flex(column, nowrap, space-between, flex-start);
@@ -37,30 +44,44 @@
       font-size: $default-size;
       text-transform: uppercase;
     }
+
     &--name {
       font-family: "Raleway", sans-serif;
     }
+
     &--time {
       font-size: $primary-size;
     }
   }
+
   .company {
     &__item {
       font-size: 16px;
     }
+
     &--name {
       font-weight: bold;
       color: $default-color;
       text-transform: uppercase;
     }
   }
+
   &__responsibility {
-    height: 0;
+    max-height: 0;
     overflow-y: hidden;
+    visibility: hidden;
+    transition: all .3s linear;
   }
+
+  &__responsibility-expand {
+    visibility: visible;
+    max-height: 500px;
+  }
+
   .responsibility__list {
     padding-top: 30px;
     margin-left: 80px;
+
     li {
       &:before {
         @include after();
@@ -71,6 +92,7 @@
       }
     }
   }
+
   &__full {
     width: 100%;
     margin-top: 15px;
@@ -79,6 +101,8 @@
     border-left: none;
     border-right: none;
     cursor: pointer;
+    transition: all .2s ease-in-out;
+
     &:before,
     &:after {
       @include after();
@@ -90,32 +114,38 @@
       background-color: $bg2;
       z-index: 1;
     }
+
     &:after {
       top: -6px;
       width: 10px;
       height: 10px;
       animation: impulse 2s linear infinite;
     }
+
     &.sea-bd:before,
     &.sea-bd:after {
       border-top: 2px solid $sea;
       border-right: 2px solid $sea;
     }
+
     &.green-bd:before,
     &.green-bd:after {
       border-top: 2px solid $green;
       border-right: 2px solid $green;
     }
+
     &.orange-bd:before,
     &.orange-bd:after {
       border-top: 2px solid $orange;
       border-right: 2px solid $orange;
     }
+
     &.yellow-bd:before,
     &.yellow-bd:after {
       border-top: 2px solid $yellow;
       border-right: 2px solid $yellow;
     }
+
     // TODO: make code DRY
     // @each $color in yellow,
     // sea,
@@ -127,6 +157,11 @@
     //     border-right: 2px solid '$#{$color}';
     //   }
     // }
+
+    &-rotate {
+      transform: rotateX(180deg);
+      transform-origin: center;
+    }
   }
 }
 
@@ -134,9 +169,11 @@
   0% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.3;
   }
