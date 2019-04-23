@@ -75,7 +75,7 @@ export const scrollToElement = (value) => {
 }
 
 // Set active menu item
-export const activeLink = (index) => {
+export const activeLink = (index = 0) => {
   const links = [...document.querySelectorAll('a.nav__item')]
   links.forEach(element => {
     element.classList.remove('active-menu');

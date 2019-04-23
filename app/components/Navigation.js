@@ -13,7 +13,7 @@ const Navigation = ({ scrollToElement, api }) => {
     <nav className="nav">
       <div className="nav__container">
         <div className="nav__logo">
-          <img onClick={() => scrollToElement('about')} src={logo.url} alt="" />
+          <img src={logo.url} alt="" />
         </div>
         <div className="nav__menu">
           {menu.map((item, index) => {
