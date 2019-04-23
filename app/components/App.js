@@ -4,16 +4,16 @@ import Home from './Home';
 import NoMatchRoute from './NoMatchRoute';
 
 class App extends React.Component {
-    render() {
-        return (
-            <Router >
-                <Switch>
-                    <Route exact path='/' component={Home}></Route>
-                    <Route component={NoMatchRoute}></Route>
-                </Switch>
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Router >
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route component={NoMatchRoute}></Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
