@@ -1,7 +1,6 @@
 import React from 'react';
 import { Section } from './common/Section';
-// import ttt from '../assets/images/self/self2.png';
-const ttt = require('../assets/images/self/self2.jpg');
+const img = require('../assets/images/self/self.png');
 
 const About = ({ api }) => {
   const { images, about } = api,
@@ -17,14 +16,14 @@ const About = ({ api }) => {
       </div>
       <div className="about__description about--self">
         <div className="about__image">
-          <img src={ttt} alt="" />
+          <img src={img} alt="" />
         </div>
         <div className="about__bio">
           <h3>
             Hello everyone, I'm <span>Bohdan Kosytskyi</span>
             <br />
             front-end developer
-                        </h3>
+          </h3>
           <p>
             {about}
           </p>
