@@ -75,7 +75,7 @@ export const highlightMenuItem = () => {
       curIndex = idx;
     }
   });
-  
+
   activeLink(curIndex);
 }
 
@@ -114,8 +114,12 @@ const badBrowserDetect = () => {
 }
 
 // Diable scroll when preloader is active
-export const disableScroll = () => {
+export const disableScroll = (disabled = true) => {
   window.scrollTo(0, 0);
+  const element = document.getElementsByTagName('html')[0];
+  disabled
+    ? element.classList.add('no-scroll')
+    : element.classList.remove('no-scroll');
 }
 
 // Progress bar value animation

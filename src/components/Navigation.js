@@ -14,10 +14,9 @@ const Navigation = ({ scrollToElement, api }) => {
         </div>
         <div className="nav__menu">
           {menu.map((item, index) => {
-            console.log(item)
             return (
+              // eslint-disable-next-line jsx-a11y/anchor-is-valid
               <a
-                href
                 className="nav__item"
                 onClick={() => {
                   scrollToElement(item);

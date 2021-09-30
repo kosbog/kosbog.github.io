@@ -20,12 +20,7 @@ class Home extends React.Component {
       loading: 'pending',
       isBadBrowser: API.browser
     };
-
-    document.addEventListener('scroll', disableScroll);
-
-    this.showMorePortfolio = this.showMorePortfolio.bind(this);
-    this.checkContact = this.checkContact.bind(this);
-    this.initSetupApp = this.initSetupApp.bind(this);
+    disableScroll();
   }
 
   componentDidMount() {
@@ -45,41 +40,34 @@ class Home extends React.Component {
     document.removeEventListener('scroll', progressBarAnimate);
   }
 
-  initSetupApp() {
+  initSetupApp = () => {
     this.setState({ loading: 'fulfilled' });
-    document.removeEventListener('scroll', disableScroll);
+    disableScroll(false);
     activeLink();
     skillsLevelAnimation();
     getYear();
   }
 
-  showMorePortfolio() {
+  showMorePortfolio = () => {
     this.setState({ portfolioFull: this.state.portfolioFull + 3 });
   }
 
-  checkContact(e) {
+  checkContact = (e) => {
     this.setState({ currentContact: e.target.value });
   }
 
-  renderContent() {
+  renderContent = () => {
     return (
-      <React.Fragment>
+      <div className="container">
         <Navigation
           scrollToElement={scrollToElement}
           api={API} />
-        {/* <Welcome
-                    api={API}
-                    scrollToElement={scrollToElement} /> */}
         <About api={API} />
         <Skills
           api={API} />
         <Experience
           api={API}
           fullExperience={fullExperience} />
-        {/* <Portfolio
-                    api={API}
-                    portfolioFull={this.state.portfolioFull}
-                    showMorePortfolio={this.showMorePortfolio} /> */}
         <Education
           api={API} />
         <Contacts
@@ -87,26 +75,17 @@ class Home extends React.Component {
           checkContact={this.checkContact}
           currentContact={this.state.currentContact} />
         <Footer />
-      </React.Fragment>
+      </div>
     )
   }
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <ProgressBar />
-        {this.state.isBadBrowser
-          ? <React.Fragment>
-            <Browser />
-            <Preloader />
-          </React.Fragment>
-          : <React.Fragment>
-            <Preloader />
-            <div className="container">
-              {this.renderContent()}
-            </div>
-          </React.Fragment>}
-      </React.Fragment>
+        <Preloader />
+        {this.state.isBadBrowser ? <Browser /> : this.renderContent()}
+      </>
     );
   }
 }

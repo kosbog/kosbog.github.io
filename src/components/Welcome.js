@@ -13,7 +13,7 @@ const Greeting = ({ scrollToElement }) => {
     )
 }
 
-const Photo = ({img}) => {
+const Photo = ({ img }) => {
     return (
         <div className="photo">
             <img src={img.url} alt="I am" className="photo__image" />
