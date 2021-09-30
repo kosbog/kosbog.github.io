@@ -1,0 +1,53 @@
+.education {
+  background-color: $bg4;
+  color: $main-color;
+  span {
+      display: block;
+  }
+  &__container {
+      @include flex(row, wrap, space-between, flex-start);
+  }
+  &__item {
+      @include flex(row, wrap, space-between, center);
+      width: 100%;
+      padding-bottom: 40px;
+  }
+  &__position {
+      @include flex(row, nowrap, flex-start, center);
+      &:before {
+          @include after();
+          position: relative;
+          left: 0;
+          margin-right: 30px;
+          width: 65px;
+          height: 40px;
+      }
+  }
+  &__university {
+      @include flex(column, nowrap, space-between, flex-start);
+  }
+  .position {
+      &__item {
+          @include flex(column, nowrap, space-between, flex-start);
+          font-weight: bold;
+          font-size: $default-size;
+          text-transform: uppercase;
+      }
+      &--name {
+          font-family: "Raleway", sans-serif;
+      }
+      &--time {
+          font-size: $primary-size;
+      }
+  }
+  .university {
+      &__item {
+          font-size: 16px;
+      }
+      &--name {
+          font-weight: bold;
+          color: $default-color;
+          text-transform: uppercase;
+      }
+  }
+}

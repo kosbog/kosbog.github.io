@@ -1,0 +1,209 @@
+html {
+    font-family: $lato;
+    font-size: $default-size;
+    line-height: 22px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    max-width: 1280px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto 60px;
+}
+
+.section {
+    min-height: 100%;
+    @include flex(row, nowrap, center, center);
+    padding-top: 90px;
+}
+
+.section-header {
+    @include flex(row, nowrap, flex-start, center);
+    width: 100%;
+    margin: 0;
+    color: $default-color;
+    font-family: $raleway;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 80px;
+    &:before {
+        @include after();
+        position: relative;
+        left: 0;
+        background-color: $default-color;
+        width: 65px;
+        height: 22px;
+        margin-right: 25px;
+    }
+}
+
+.btn {
+    display: block;
+    overflow: hidden;
+    &:hover {
+        color: $green;
+        & button {
+            border-color: $green;
+            transition: .3s ease-out;
+        }
+    }
+}
+
+button {
+    display: block;
+    border: 2px solid $default-color;
+    font-size: $primary-size;
+    padding: 10px 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease-out;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.ml-90 {
+    margin-left: 90px;
+}
+
+.green {
+    &-color {
+        color: $green;
+    }
+    &-bg {
+        background-color: $green;
+    }
+    &-bg-opacity {
+        background-color: $green;
+        background-color: rgba($green, .7);
+    }
+    &-bg-pseudo:before {
+        background-color: $green;
+    }
+    &-bd {
+        border: 2px solid $green;
+    }
+}
+
+.pink {
+    &-color {
+        color: $pink;
+    }
+    &-bg {
+        background-color: $pink;
+    }
+    &-bg-opacity {
+        background-color: $pink;
+        background-color: rgba($pink, .7);
+    }
+    &-bg-pseudo:before {
+        background-color: $pink;
+    }
+    &-bd {
+        border: 2px solid $green;
+    }
+}
+
+.sea {
+    &-color {
+        color: $sea;
+    }
+    &-bg {
+        background-color: $sea;
+    }
+    &-bg-opacity {
+        background-color: $sea;
+        background-color: rgba($sea, .7);
+    }
+    &-bg-pseudo:before {
+        background-color: $sea;
+    }
+    &-bd {
+        border: 2px solid $sea;
+    }
+}
+
+.yellow {
+    &-color {
+        color: $yellow;
+    }
+    &-bg {
+        background-color: $yellow;
+    }
+    &-bg-opacity {
+        background-color: $yellow;
+        background-color: rgba($yellow, .7);
+    }
+    &-bg-pseudo:before {
+        background-color: $yellow;
+    }
+    &-bd {
+        border: 2px solid $yellow;
+    }
+}
+
+.orange {
+    &-color {
+        color: $orange;
+    }
+    &-bg {
+        background-color: $orange;
+    }
+    &-bg-opacity {
+        background-color: $orange;
+        background-color: rgba($orange, .7);
+    }
+    &-bg-pseudo:before {
+        background-color: $orange;
+    }
+    &-bd {
+        border: 2px solid $orange;
+    }
+}
+
+.browser {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $bg1;
+    color: $green;
+    text-align: center;
+    font-size: 28px;
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        & p {
+            margin: 30px 0;
+            line-height: 30px;
+        }
+    }
+}
+
+.hideMe {
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s linear;
+}
